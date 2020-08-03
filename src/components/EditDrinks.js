@@ -80,7 +80,7 @@ function ActionLink() {
           onChange={(e) => updatePrice(e.target.value)}
           value={price}
         />
-        <input type="submit" value="Update Item" />
+        <input type="submit" />
         <DeleteButton
           id={id}
           type={type+'s'}

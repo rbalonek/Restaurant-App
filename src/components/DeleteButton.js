@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 // import EditDrinks from "./EditDrinks";
 
 export default function DeleteButton(props) {
-  // console.log(props.id)
+  console.log(props.id)
+  console.log(props.type)
   // let 'drink' === 'drinks';
   const deletePost = async () => {
     const data = await axios.delete(
@@ -23,7 +24,7 @@ export default function DeleteButton(props) {
 
   return (
     <div>
-      <button onClick={deletePost} onMouseUp={ActionLink}>
+      <button onClick={deletePost} onMouseUp={ActionLink} >
         delete
       </button>
     </div>
