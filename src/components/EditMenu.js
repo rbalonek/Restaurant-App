@@ -22,12 +22,12 @@ export default function EditMenu(props) {
   },[] ) 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const table = type === "app" ? "Apps" : "Mains"
+    const table = type === "app" ? "apps" : "mains"
     const data = await axios.put(`https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}/${id}`, {
       fields: {
-        Name: name,
-        Notes: notes,
-        Price: price
+        name: name,
+        notes: notes,
+        price: price
       }
     }, {
       headers: {
@@ -48,13 +48,13 @@ export default function EditMenu(props) {
         <h1>{name}<br />{notes}<br />{price}<br /></h1>
         
         <label htmlFor="name">Name</label>
-        <input type="Text" id="Name" onChange={e => updateName(e.target.value)} value={name} />
+        <input type="Text" id="name" onChange={e => updateName(e.target.value)} value={name} />
         
         <label htmlFor="notes">Notes</label>
-        <input type="Text" id="Notes" onChange={e => updateNotes(e.target.value)} value={notes} /> <br /><br />
+        <input type="Text" id="notes" onChange={e => updateNotes(e.target.value)} value={notes} /> <br /><br />
         
         <label htmlFor="price">Price</label>
-        <input type="Text" id="Price" onChange={e => updatePrice(e.target.value)} value={price} />
+        <input type="Text" id="price" onChange={e => updatePrice(e.target.value)} value={price} />
         
         <input type="submit" value="Update Item" />
           

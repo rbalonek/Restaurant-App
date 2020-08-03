@@ -1,14 +1,13 @@
-
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import axios from "axios";
-import './App.css';
+import "./App.css";
 
 //Components
-import Header from "./components/Header"
+import Header from "./components/Header";
 import MainMenu from "./components/MainMenu";
-import EditMenu from "./components/EditMenu"
-
+import EditMenu from "./components/EditMenu";
+import EditDrinks from "./components/EditDrinks";
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
@@ -16,12 +15,12 @@ function App() {
   const [apps, updateApps] = useState([]);
   const [mains, updateMains] = useState([]);
   const [drinks, updateDrinks] = useState([]);
-  const [alcohol, updateAlcohol] = useState([]);
+  const [alcoholDrinks, updateAlcoholDrinks] = useState([]);
 
   useEffect(() => {
     const apiCall = async () => {
       const data = await axios.get(
-        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/Mains?view=Grid%20view",
+        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/mains?view=Grid%20view",
         {
           headers: {
             Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
@@ -32,13 +31,13 @@ function App() {
       // console.log(data.data.records);
     };
     apiCall();
-    invokeFetch(false)
+    invokeFetch(false);
   }, [fetchEntries]);
 
   useEffect(() => {
     const apiCall = async () => {
       const data = await axios.get(
-        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/Apps?view=Grid%20view",
+        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/apps?view=Grid%20view",
         {
           headers: {
             Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
@@ -54,23 +53,7 @@ function App() {
   useEffect(() => {
     const apiCall = async () => {
       const data = await axios.get(
-        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/Drinks?view=Grid%20view",
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-          },
-        }
-      );
-      updateDrinks(data.data.records);
-      // console.log(data.data.records)
-    };
-    apiCall();
-  }, [fetchEntries]);
-
-  useEffect(() => {
-    const apiCall = async () => {
-      const data = await axios.get(
-        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/Wine%20Cocktails?view=Grid%20view",
+        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/drinks?view=Grid%20view",
         {
           headers: {
             Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
@@ -83,28 +66,57 @@ function App() {
     apiCall();
   }, [fetchEntries]);
 
+  useEffect(() => {
+    const apiCall = async () => {
+      const data = await axios.get(
+        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/Wine%20and%20Cocktails?view=Grid%20view",
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          },
+        }
+      );
+      updateAlcoholDrinks(data.data.records);
+      // console.log(data.data.records);
+    };
+    apiCall();
+  }, [fetchEntries]);
+
   return (
     <div>
       <Header />
 
       <h1>App JS Page</h1>
 
-      <Route path="/MainMenu"> 
-      <MainMenu
-        apps={apps}
-        mains={mains} />
-    </Route>
+      <Route path="/MainMenu">
+        <MainMenu
+          apps={apps}
+          mains={mains}
+          drinks={drinks}
+          alcoholDrinks={alcoholDrinks} />
+      </Route>
 
-    <Route path="/EditMenu/:type/:id">
-      <EditMenu
-        // fetchMenu={fetchMenu}
-        // updateFetchMenu={updateFetchMenu}
-        apps={apps}
-        mains={mains} />
-    </Route>
-   
+      <Route path="/EditMenu/:type/:id">
+        <EditMenu
+          // fetchMenu={fetchMenu}
+          // updateFetchMenu={updateFetchMenu}
+          apps={apps}
+          mains={mains}
+          drinks={drinks}
+          alcoholDrinks={alcoholDrinks}
+        />
+      </Route>
 
-
+      <Route path="/EditDrinks/:type/:id">
+        <EditDrinks
+          // fetchMenu={fetchMenu}
+          // updateFetchMenu={updateFetchMenu}
+          apps={apps}
+          mains={mains}
+          drinks={drinks}
+          alcoholDrinks={alcoholDrinks}
+        />
+      </Route>
     </div>
   );
 }
