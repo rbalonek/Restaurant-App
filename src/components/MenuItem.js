@@ -5,12 +5,12 @@ export default function MenuItem(props) {
   const { item, type } = props
   return (
     <Link to={`/EditMenu/${type}/${item.id}`}>
-      <p key={item.fields.Name}>
-      {item.fields.Name}
+      <p key={item.fields.name}>
+      {item.fields.name}
       <br></br>
-      {item.fields.Notes}
+      {item.fields.notes}
       <br></br>
-      {item.fields.Price}
+      {item.fields.price}
     </p>
     </Link>
   );

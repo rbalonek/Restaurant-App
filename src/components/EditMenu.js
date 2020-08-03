@@ -8,26 +8,26 @@ import { useParams } from "react-router-dom";
 
 export default function EditMenu(props) {
   // console.log(props.apps)
-  const [Name, updateName] = useState('');
-  const [Notes, updateNotes] = useState('');
-  const [Price, updatePrice] = useState('');
+  const [name, updateName] = useState('');
+  const [notes, updateNotes] = useState('');
+  const [price, updatePrice] = useState('');
 
   const { id, type } = useParams();
   useEffect(() => {
     const items = type === "app" ? props.apps : props.mains
     const menuItem = items.find(item => item.id === id)
-    updateName(menuItem.fields.Name)
-    updateNotes(menuItem.fields.Notes)
-    updatePrice(menuItem.fields.Price)
+    updateName(menuItem.fields.name)
+    updateNotes(menuItem.fields.notes)
+    updatePrice(menuItem.fields.price)
   },[] ) 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const table = type === "app" ? "Apps" : "Mains"
     const data = await axios.put(`https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}/${id}`, {
       fields: {
-        Name: Name,
-        Notes: Notes,
-        Price: Price
+        Name: name,
+        Notes: notes,
+        Price: price
       }
     }, {
       headers: {
@@ -45,16 +45,16 @@ export default function EditMenu(props) {
      
       <form onSubmit={handleSubmit}>
         <h2>Edit Menu</h2>
-        <h1>{Name}<br />{Notes}<br />{Price}<br /></h1>
+        <h1>{name}<br />{notes}<br />{price}<br /></h1>
         
-        <label htmlFor="Name">Name</label>
-        <input type="Text" id="Name" onChange={e => updateName(e.target.value)} value={Name} />
+        <label htmlFor="name">Name</label>
+        <input type="Text" id="Name" onChange={e => updateName(e.target.value)} value={name} />
         
-        <label htmlFor="Notes">Notes</label>
-        <input type="Text" id="Notes" onChange={e => updateNotes(e.target.value)} value={Notes} /> <br /><br />
+        <label htmlFor="notes">Notes</label>
+        <input type="Text" id="Notes" onChange={e => updateNotes(e.target.value)} value={notes} /> <br /><br />
         
-        <label htmlFor="Price">Price</label>
-        <input type="Text" id="Price" onChange={e => updatePrice(e.target.value)} value={Price} />
+        <label htmlFor="price">Price</label>
+        <input type="Text" id="Price" onChange={e => updatePrice(e.target.value)} value={price} />
         
         <input type="submit" value="Update Item" />
           
