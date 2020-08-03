@@ -11,7 +11,7 @@ export default function EditDrinks(props) {
 
   const { id, type } = useParams();
   useEffect(() => {
-    const items = type === "drinks" ? props.drinks : props.alcoholDrinks;
+    const items = type === "drink" ? props.drinks : props.alcoholDrinks;
     const drinkItem = items.find((item) => item.id === id);
     updateName(drinkItem.fields.name);
     updateNotes(drinkItem.fields.notes);
@@ -19,7 +19,7 @@ export default function EditDrinks(props) {
   }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const table = type === "drinks" ? "drinks" : "alcoholDrinks";
+    const table = type === "drink" ? "drinks" : "alcoholDrinks";
     const data = await axios.put(
       `https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}/${id}`,
       {
