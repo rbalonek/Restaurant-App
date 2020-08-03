@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import DeleteButton from "./DeleteButton"
+import CreateItem from "./CreateApp"
 
 
 
@@ -36,8 +37,11 @@ export default function EditMenu(props) {
         'Content-Type': 'application/json'
       }
     })
+    ActionLink()
   }
-
+  function ActionLink() {
+    window.location.assign("/MainMenu")
+  }
 
   return (
     
@@ -61,6 +65,7 @@ export default function EditMenu(props) {
           id={id}
           type={type+'s'}
         />
+
           
       </form>
 

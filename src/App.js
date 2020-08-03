@@ -9,6 +9,7 @@ import MainMenu from "./components/MainMenu";
 import EditMenu from "./components/EditMenu";
 import EditDrinks from "./components/EditDrinks";
 import DeleteButton from "./components/DeleteButton"
+import CreateApp from "./components/CreateApp"
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
@@ -129,6 +130,11 @@ function App() {
         />
       </Route>
 
+      
+      <CreateApp
+      fetchEntries={fetchEntries}
+      invokeFetch={invokeFetch}
+      />
       
     </div>
   );

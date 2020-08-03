@@ -41,10 +41,12 @@ export default function EditDrinks(props) {
         },
       }
     );
-    // {e =>  window.location.href='/MainMenu'}
+    ActionLink()
   };
 
-  
+function ActionLink() {
+  window.location.assign("/MainMenu")
+}
 
   return (
     <div>
