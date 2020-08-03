@@ -69,7 +69,7 @@ function App() {
   useEffect(() => {
     const apiCall = async () => {
       const data = await axios.get(
-        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/Wine%20and%20Cocktails?view=Grid%20view",
+        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/alcoholDrinks?view=Grid%20view",
         {
           headers: {
             Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
