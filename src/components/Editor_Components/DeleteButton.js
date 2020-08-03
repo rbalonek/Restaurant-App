@@ -18,7 +18,7 @@ export default function DeleteButton(props) {
     // props.invokeFetch(!props.fetchEntries)
   };
   function ActionLink() {
-    window.location.assign("/MainMenuEditor");
+    window.location.assign("/MainMenu");
   }
 
   return (

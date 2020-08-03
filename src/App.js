@@ -16,6 +16,8 @@ import EditorMain from "./editor-menu/EditorMain"
 
 // "Guest Experience"
 import WelcomePage from "./WelcomePage"
+import LiveMenu from "./live_menu/LiveMenu"
+import BillPage from "./components/Guest_Components/BillPage"
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
@@ -141,6 +143,15 @@ function App() {
       <Route path="/EditorMain">
       <EditorMain />
       </Route>
+
+      <Route path="/LiveMenu">
+      <LiveMenu />
+      </Route>
+
+      <Route path="/BillPage">
+      <BillPage />
+      </Route>
+      
     </div>
   );
 }

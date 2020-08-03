@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 ///Components
 import DeleteButton from './DeleteButton'
-
+import EditorHeader from "./EditorHeader"
 
 
 export default function EditDrinks(props) {
@@ -50,6 +50,7 @@ function ActionLink() {
 
   return (
     <div>
+      <EditorHeader />
       <form onSubmit={handleSubmit}>
         <h2>Edit Menu</h2>
         <h1>
