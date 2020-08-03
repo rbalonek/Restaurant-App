@@ -110,8 +110,8 @@ function App() {
 
       <Route path="/EditDrinks/:type/:id">
         <EditDrinks
-        fetchEntries={fetchEntries}
-        invokeFetch={invokeFetch}
+          fetchEntries={fetchEntries}
+          invokeFetch={invokeFetch}
           apps={apps}
           mains={mains}
           drinks={drinks}
@@ -130,7 +130,6 @@ function App() {
         />
       </Route>
 
-      
       <CreateApp
       fetchEntries={fetchEntries}
       invokeFetch={invokeFetch}
@@ -141,3 +140,5 @@ function App() {
 }
 
 export default App;
+
+

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-// import { Link } from "react-router-dom";
+import axios from "axios"
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 ///Components
 import DeleteButton from './DeleteButton'
@@ -10,9 +10,9 @@ import DeleteButton from './DeleteButton'
 
 export default function EditDrinks(props) {
   // console.log(props.apps)
-  const [name, updateName] = useState("");
-  const [notes, updateNotes] = useState("");
-  const [price, updatePrice] = useState("");
+  const [name, updateName] = useState('');
+  const [notes, updateNotes] = useState('');
+  const [price, updatePrice] = useState('');
 
   const { id, type } = useParams();
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function EditDrinks(props) {
     updateName(drinkItem.fields.name);
     updateNotes(drinkItem.fields.notes);
     updatePrice(drinkItem.fields.price);
-  }, []);
+  },[]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const table = type === "drink" ? "drinks" : "alcoholDrinks";
@@ -71,11 +71,8 @@ function ActionLink() {
         <input
           type="Text"
           id="notes"
-          onChange={(e) => updateNotes(e.target.value)}
-          value={notes}
-        />{" "}
-        <br />
-        <br />
+          onChange={(e) => updateNotes(e.target.value)} value={notes}/>{" "} <br /> <br />
+        
         <label htmlFor="price">Price</label>
         <input
           type="Text"

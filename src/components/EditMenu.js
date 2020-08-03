@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+
+//components
 import DeleteButton from "./DeleteButton"
-import CreateItem from "./CreateApp"
+// import CreateItem from "./CreateApp"
 
 
 
