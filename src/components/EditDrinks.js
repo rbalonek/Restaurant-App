@@ -3,6 +3,11 @@ import axios from "axios";
 // import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
+///Components
+import DeleteButton from './DeleteButton'
+
+
+
 export default function EditDrinks(props) {
   // console.log(props.apps)
   const [name, updateName] = useState("");
@@ -38,6 +43,8 @@ export default function EditDrinks(props) {
     );
     // {e =>  window.location.href='/MainMenu'}
   };
+
+  
 
   return (
     <div>
@@ -75,7 +82,37 @@ export default function EditDrinks(props) {
           value={price}
         />
         <input type="submit" value="Update Item" />
+        <DeleteButton
+          id={id}
+          type={type}
+        />
       </form>
     </div>
   );
 }
+
+
+// const [deleted, updateDeleted] = useState(false);
+
+//   const handleDelete = (e) => {
+//     e.preventDefault();
+//     try {
+//       updateDeleted(true);
+//       const table = type === "drink" ? "drinks" : "alcoholDrinks";
+//       setTimeout(async () => {
+//         await axios.delete(`https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}/${id}`, {
+//           headers: {
+//             'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+//             'Content-Type': 'application/json',
+//           }
+//         });
+//         props.invokeFetch(!props.fetchEntries);
+//       }, 1000);
+//     } catch (e) {
+//       console.log(e.message);
+//     }
+//   };
+
+
+// <button onClick={handleDelete}>{deleted ? 'Deleted!' : 'Delete!'}</button>
+

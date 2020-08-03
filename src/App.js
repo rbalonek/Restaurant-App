@@ -8,10 +8,10 @@ import Header from "./components/Header";
 import MainMenu from "./components/MainMenu";
 import EditMenu from "./components/EditMenu";
 import EditDrinks from "./components/EditDrinks";
+import DeleteButton from "./components/DeleteButton"
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
-  // const [fetchMenu, updateFetchMenu] = useState(true);
   const [apps, updateApps] = useState([]);
   const [mains, updateMains] = useState([]);
   const [drinks, updateDrinks] = useState([]);
@@ -61,7 +61,7 @@ function App() {
         }
       );
       updateDrinks(data.data.records);
-      console.log(data.data.records)
+      // console.log(data.data.records)
     };
     apiCall();
   }, [fetchEntries]);
@@ -98,8 +98,8 @@ function App() {
 
       <Route path="/EditMenu/:type/:id">
         <EditMenu
-          // fetchMenu={fetchMenu}
-          // updateFetchMenu={updateFetchMenu}
+          fetchEntries={fetchEntries}
+          invokeFetch={invokeFetch}
           apps={apps}
           mains={mains}
           drinks={drinks}
@@ -109,14 +109,27 @@ function App() {
 
       <Route path="/EditDrinks/:type/:id">
         <EditDrinks
-          // fetchMenu={fetchMenu}
-          // updateFetchMenu={updateFetchMenu}
+        fetchEntries={fetchEntries}
+        invokeFetch={invokeFetch}
           apps={apps}
           mains={mains}
           drinks={drinks}
           alcoholDrinks={alcoholDrinks}
         />
       </Route>
+
+      <Route path="/DeleteButton">
+        <DeleteButton
+          apps={apps}
+          mains={mains}
+          drinks={drinks}
+          alcoholDrinks={alcoholDrinks}
+          fetchEntries={fetchEntries}
+          invokeFetch={invokeFetch}
+        />
+      </Route>
+
+      
     </div>
   );
 }
