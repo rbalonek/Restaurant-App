@@ -19,7 +19,7 @@ export default function MainMenu(props) {
       {props.drinks.map((drink) => <DrinkItem key={drink.id} item={drink} type="drink" />)}
       <button>Add Drink</button>
       <h1>Wine / Cocktails</h1>
-      {props.alcoholDrinks.map((alcohol) => <DrinkItem key={alcohol.id} item={alcohol} type="alcohol" />)}
+      {props.alcoholDrinks.map((alcoholDrink) => <DrinkItem key={alcoholDrink.id} item={alcoholDrink} type="alcoholDrink" />)}
       <button>Add Alcohol Drink</button>
     </div>
   )

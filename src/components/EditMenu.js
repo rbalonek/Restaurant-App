@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import DeleteButton from "./DeleteButton"
 
 
 
@@ -35,7 +36,6 @@ export default function EditMenu(props) {
         'Content-Type': 'application/json'
       }
     })
-    // {e =>  window.location.href='/MainMenu'}
   }
 
 
@@ -57,6 +57,10 @@ export default function EditMenu(props) {
         <input type="Text" id="price" onChange={e => updatePrice(e.target.value)} value={price} />
         
         <input type="submit" value="Update Item" />
+        <DeleteButton
+          id={id}
+          type={type+'s'}
+        />
           
       </form>
 

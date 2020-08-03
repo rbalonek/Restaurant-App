@@ -84,35 +84,9 @@ export default function EditDrinks(props) {
         <input type="submit" value="Update Item" />
         <DeleteButton
           id={id}
-          type={type}
+          type={type+'s'}
         />
       </form>
     </div>
   );
 }
-
-
-// const [deleted, updateDeleted] = useState(false);
-
-//   const handleDelete = (e) => {
-//     e.preventDefault();
-//     try {
-//       updateDeleted(true);
-//       const table = type === "drink" ? "drinks" : "alcoholDrinks";
-//       setTimeout(async () => {
-//         await axios.delete(`https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}/${id}`, {
-//           headers: {
-//             'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
-//             'Content-Type': 'application/json',
-//           }
-//         });
-//         props.invokeFetch(!props.fetchEntries);
-//       }, 1000);
-//     } catch (e) {
-//       console.log(e.message);
-//     }
-//   };
-
-
-// <button onClick={handleDelete}>{deleted ? 'Deleted!' : 'Delete!'}</button>
-

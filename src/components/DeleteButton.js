@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import EditDrinks from "./EditDrinks";
+import { Link } from "react-router-dom";
+// import EditDrinks from "./EditDrinks";
 
 
 export default function DeleteButton(props) {
@@ -15,12 +16,17 @@ export default function DeleteButton(props) {
         },
       }
     );
-    props.invokeFetch(!props.fetchEntries)
+    // props.invokeFetch(!props.fetchEntries)
   };
+  function ActionLink() {
+    window.location.assign("/MainMenu")
+  }
 
   return (
     <div>
-      <button onClick={deletePost}>delete</button>
+    
+      <button onClick={deletePost} onMouseUp={ActionLink} >delete</button>
+        
     </div>
   );
 }
