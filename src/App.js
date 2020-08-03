@@ -15,6 +15,8 @@ function App() {
   // const [fetchMenu, updateFetchMenu] = useState(true);
   const [apps, updateApps] = useState([]);
   const [mains, updateMains] = useState([]);
+  const [drinks, updateDrinks] = useState([]);
+  const [alcohol, updateAlcohol] = useState([]);
 
   useEffect(() => {
     const apiCall = async () => {
@@ -44,6 +46,38 @@ function App() {
         }
       );
       updateApps(data.data.records);
+      // console.log(data.data.records)
+    };
+    apiCall();
+  }, [fetchEntries]);
+
+  useEffect(() => {
+    const apiCall = async () => {
+      const data = await axios.get(
+        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/Drinks?view=Grid%20view",
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          },
+        }
+      );
+      updateDrinks(data.data.records);
+      // console.log(data.data.records)
+    };
+    apiCall();
+  }, [fetchEntries]);
+
+  useEffect(() => {
+    const apiCall = async () => {
+      const data = await axios.get(
+        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/Wine%20Cocktails?view=Grid%20view",
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          },
+        }
+      );
+      updateDrinks(data.data.records);
       console.log(data.data.records)
     };
     apiCall();
