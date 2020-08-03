@@ -8,8 +8,8 @@ import Header from "./components/Header";
 import MainMenu from "./components/MainMenu";
 import EditMenu from "./components/EditMenu";
 import EditDrinks from "./components/EditDrinks";
-import DeleteButton from "./components/DeleteButton"
-import CreateApp from "./components/CreateApp"
+import DeleteButton from "./components/DeleteButton";
+import CreateApp from "./components/CreateApp";
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
@@ -94,7 +94,8 @@ function App() {
           apps={apps}
           mains={mains}
           drinks={drinks}
-          alcoholDrinks={alcoholDrinks} />
+          alcoholDrinks={alcoholDrinks}
+        />
       </Route>
 
       <Route path="/EditMenu/:type/:id">
@@ -129,16 +130,13 @@ function App() {
           invokeFetch={invokeFetch}
         />
       </Route>
-
-      <CreateApp
-      fetchEntries={fetchEntries}
-      invokeFetch={invokeFetch}
-      />
-      
+      <Route path="/CreateApp">
+        <CreateApp
+          fetchEntries={fetchEntries}
+          invokeFetch={invokeFetch} />
+      </Route>
     </div>
   );
 }
 
 export default App;
-
-

@@ -2,7 +2,7 @@ import React from 'react'
 import MenuItem from "./MenuItem"
 import DrinkItem from "./DrinkItem"
 import { identifier } from '@babel/types'
-import CreateItem from './CreateApp'
+import CreateApp from './CreateApp'
 
 
 export default function MainMenu(props) {

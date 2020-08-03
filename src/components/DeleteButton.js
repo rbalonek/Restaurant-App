@@ -3,9 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 // import EditDrinks from "./EditDrinks";
 
-
 export default function DeleteButton(props) {
-  console.log(props.id)
+  // console.log(props.id)
   // let 'drink' === 'drinks';
   const deletePost = async () => {
     const data = await axios.delete(
@@ -19,14 +18,14 @@ export default function DeleteButton(props) {
     // props.invokeFetch(!props.fetchEntries)
   };
   function ActionLink() {
-    window.location.assign("/MainMenu")
+    window.location.assign("/MainMenu");
   }
 
   return (
     <div>
-    
-      <button onClick={deletePost} onMouseUp={ActionLink} >delete</button>
-        
+      <button onClick={deletePost} onMouseUp={ActionLink}>
+        delete
+      </button>
     </div>
   );
 }
