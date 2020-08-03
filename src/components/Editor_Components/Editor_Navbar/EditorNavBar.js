@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function HeaderNav() {
+export default function EditorNavBar() {
   return (
     <div>
         <div className="header-links">
@@ -10,9 +10,14 @@ export default function HeaderNav() {
             <button className="homepage-button">Home Page</button>
           </Link>
 
-          <Link to="/MainMenu">
+          <Link to="/MainMenuEditor">
             <button className="form-button">Edit Menu </button>
           </Link>
+
+        <Link to="/CreateMenuItem">
+          <button>Create Menu Item</button>
+        </Link>
+
 
           
          

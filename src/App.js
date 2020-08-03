@@ -4,12 +4,18 @@ import axios from "axios";
 import "./App.css";
 
 //Components
-import Header from "./components/Header";
-import MainMenu from "./components/MainMenu";
+
+import MainMenu from "./components/MainMenuEditor";
 import EditMenu from "./components/EditMenu";
 import EditDrinks from "./components/EditDrinks";
 import DeleteButton from "./components/DeleteButton";
-import CreateApp from "./components/CreateApp";
+import CreateMenuItem from "./components/CreateMenuItem";
+
+// "Backend" for restaurant
+import EditorMain from "./editor-menu/EditorMain"
+
+// "Guest Experience"
+import WelcomePage from "./WelcomePage"
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
@@ -85,11 +91,8 @@ function App() {
 
   return (
     <div>
-      <Header />
-
-      <h1>App JS Page</h1>
-
-      <Route path="/MainMenu">
+      <WelcomePage />
+      <Route path="/MainMenuEditor">
         <MainMenu
           apps={apps}
           mains={mains}
@@ -130,10 +133,13 @@ function App() {
           invokeFetch={invokeFetch}
         />
       </Route>
-      <Route path="/CreateApp">
-        <CreateApp
-          fetchEntries={fetchEntries}
-          invokeFetch={invokeFetch} />
+
+      <Route path="/CreateMenuItem">
+        <CreateMenuItem fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
+      </Route>
+
+      <Route path="/EditorMain">
+      <EditorMain />
       </Route>
     </div>
   );

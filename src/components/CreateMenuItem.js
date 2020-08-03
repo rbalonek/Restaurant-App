@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function CreateApp(props) {
+///Components
+import EditorHeader from "./EditorHeader"
+
+function CreateMenuItem(props) {
   const [name, updateName] = useState('');
   const [notes, updateNotes] = useState('');
   const [price, updatePrice] = useState('');
@@ -33,6 +36,7 @@ function CreateApp(props) {
   };
 
   return (
+    <div> <EditorHeader />
     <form onSubmit={handleSubmit}>
       <h2>Add New Menu Item</h2>
       <label htmlFor="name">name</label>
@@ -70,11 +74,12 @@ function CreateApp(props) {
             <option value="alcoholDrinks">Alcohol</option>
           </select>
        
-    </form>
+      </form>
+      </div>
   );
 }
 
-export default CreateApp;
+export default CreateMenuItem;
 
 // <label htmlFor="table">table</label>
 // <input type="Text" id="table" onChange={e => updateTable(e.target.value)} value={table} />

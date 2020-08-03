@@ -1,14 +1,16 @@
 import React from 'react'
 import MenuItem from "./MenuItem"
 import DrinkItem from "./DrinkItem"
-import { identifier } from '@babel/types'
-import CreateApp from './CreateApp'
+import EditorHeader from "./EditorHeader"
 
 
-export default function MainMenu(props) {
+
+export default function MainMenuEditor(props) {
   return (
     
     <div>
+      <header> <EditorHeader /> </header>
+      
       <h1>Main Menu Edit</h1>
       
       <h1>Apps</h1>

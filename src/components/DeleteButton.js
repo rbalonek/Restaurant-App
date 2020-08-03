@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-// import EditDrinks from "./EditDrinks";
+
 
 export default function DeleteButton(props) {
   console.log(props.id)
