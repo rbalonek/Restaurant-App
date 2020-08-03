@@ -11,7 +11,7 @@ function CreateApp(props) {
     e.preventDefault();
     // const data =
       await axios.post(
-      `https://api.airtable.com/v0/app9S6k06MQoTSJbG/apps`,
+      `https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}`,
       {
         fields: {
           name: name,
