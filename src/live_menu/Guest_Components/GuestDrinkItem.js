@@ -18,6 +18,7 @@ const useStyles = makeStyles({
   },
   media: {
     height: 100,
+    minWidth: 200,
     // maxHeight: 100,
     // borderRadius: 80,
   },
