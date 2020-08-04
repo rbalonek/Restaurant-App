@@ -1,4 +1,5 @@
 import React from 'react'
+import "./WelcomePage.css"
 import { Link } from 'react-router-dom'
 
 export default function WelcomePage() {
@@ -6,7 +7,7 @@ export default function WelcomePage() {
     <div>
       <header>
       <Link to="/LiveMenu">
-        <button>Guest Pages</button>
+        <button className="guest-pages-button">Guest Pages</button>
         </Link>
         
         <Link to="/">
@@ -14,11 +15,11 @@ export default function WelcomePage() {
         </Link>
 
         <Link to="/BillPage">
-          <button>Bill Page</button>
+          <button className="bill-page-button">Bill Page</button>
         </Link>
 
       <Link to="/EditorMain">
-        <button>Admin Pages</button>
+        <button className="admin-button">Admin Pages</button>
         </Link>
       </header>
       
