@@ -5,6 +5,7 @@ import "./LiveMenu.css"
 /// Menu Components
 import GuestMenuItem from "./Guest_Components/GuestMenuItem"
 import GuestDrinkItem from "./Guest_Components/GuestDrinkItem"
+// import TestCard from "./Guest_Components/TestCard"
 
 
 export default function LiveMenu(props) {
@@ -13,6 +14,7 @@ export default function LiveMenu(props) {
      <header>
         <GuestNavBar />
       </header>
+  
 
       <h1 className="menu-titles">Apps</h1>
       {props.apps.map((app) => <GuestMenuItem key={app.id} item={app} type="app" />)}

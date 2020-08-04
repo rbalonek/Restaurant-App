@@ -11,11 +11,20 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
+
+    
     // marginLeft: 50,
-    // marginBottom: 30,
+    marginBottom: 50,
   },
   media: {
-    height: 140,
+    height: 100,
+    // maxHeight: 100,
+    // borderRadius: 80,
+  },
+  items: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
@@ -23,28 +32,31 @@ export default function GuestDrinkItem(props) {
   const classes = useStyles();
   const { item, type } = props;
 
+  
   return (
+    <div className={classes.items}>
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {item.fields.name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {item.fields.price}, {item.fields.notes}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Add to Order
-        </Button>
-      </CardActions>
-    </Card>
+    <CardActionArea>
+      <CardMedia
+        className={classes.media}
+        image= {item.fields.imglink}
+        title={item.fields.name}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+        {item.fields.name}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+        {item.fields.price}, {item.fields.notes}
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+    <CardActions>
+      <Button size="small" color="primary">
+        Add to Order
+      </Button>
+    </CardActions>
+      </Card>
+      </div>
   );
 }
