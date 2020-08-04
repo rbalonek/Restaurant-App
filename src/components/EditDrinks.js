@@ -13,6 +13,7 @@ export default function EditDrinks(props) {
   const [name, updateName] = useState('');
   const [notes, updateNotes] = useState('');
   const [price, updatePrice] = useState('');
+  const [imglink, updateImglink] = useState('');
 
   const { id, type } = useParams();
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function EditDrinks(props) {
     updateName(drinkItem.fields.name);
     updateNotes(drinkItem.fields.notes);
     updatePrice(drinkItem.fields.price);
+    updateImglink(drinkItem.fields.imglink);
   },[]);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,6 +34,7 @@ export default function EditDrinks(props) {
           name: name,
           notes: notes,
           price: price,
+          imglink: imglink,
         },
       },
       {
@@ -81,6 +84,10 @@ function ActionLink() {
           onChange={(e) => updatePrice(e.target.value)}
           value={price}
         />
+        <label htmlFor="imglink">Image Link</label>
+
+        <input type="Text" id="imglink" onChange={e => updateImglink(e.target.value)} value={imglink} />
+
         <input type="submit" />
         <DeleteButton
           id={id}

@@ -16,6 +16,7 @@ export default function EditMenu(props) {
   const [name, updateName] = useState('');
   const [notes, updateNotes] = useState('');
   const [price, updatePrice] = useState('');
+  const [imglink, updateImglink] = useState('');
 
   const { id, type } = useParams();
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function EditMenu(props) {
     updateName(menuItem.fields.name)
     updateNotes(menuItem.fields.notes)
     updatePrice(menuItem.fields.price)
+    updateImglink(menuItem.fields.imglink)
   },[] ) 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -32,7 +34,8 @@ export default function EditMenu(props) {
       fields: {
         name: name,
         notes: notes,
-        price: price
+        price: price,
+        imglink: imglink,
       }
     }, {
       headers: {
@@ -62,6 +65,9 @@ export default function EditMenu(props) {
         
         <label htmlFor="price">Price</label>
         <input type="Text" id="price" onChange={e => updatePrice(e.target.value)} value={price} />
+
+        <label htmlFor="imglink">Image Link</label>
+        <input type="Text" id="imglink" onChange={e => updateImglink(e.target.value)} value={imglink} />
         
         <input type="submit" value="Update Item" />
         <DeleteButton
