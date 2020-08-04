@@ -8,7 +8,8 @@ function CreateMenuItem(props) {
   const [name, updateName] = useState('');
   const [notes, updateNotes] = useState('');
   const [price, updatePrice] = useState('');
-  const [table, updateTable] = useState("");
+  const [table, updateTable] = useState('');
+  const [imglink, updateImglink] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ function CreateMenuItem(props) {
           name: name,
           notes: notes,
           price: price,
+          imglink: imglink,
         },
       },
       {
@@ -33,6 +35,8 @@ function CreateMenuItem(props) {
     updateName('');
     updateNotes('');
     updatePrice('');
+    updateTable('');
+    updateImglink('');
   };
 
   return (
@@ -45,7 +49,7 @@ function CreateMenuItem(props) {
         id="name"
         onChange={(e) => updateName(e.target.value)}
         value={name}
-      />
+      /> <br/> <br/>
 
       <label htmlFor="price">price</label>
       <input
@@ -53,24 +57,36 @@ function CreateMenuItem(props) {
         id="price"
         onChange={(e) => updatePrice(e.target.value)}
         value={price}
-      />
+        /> <br/> <br/>
 
+        <label htmlFor="imglink">Image Link</label>
+        <input
+        type="Text"
+        id="imglink"
+        onChange={(e) => updateImglink(e.target.value)}
+        value={imglink}
+      /> <br/> <br/>
+
+      <label htmlFor="notes">notes</label> <br />
       <textarea
         name="notes"
         id="notes"
         onChange={(e) => updateNotes(e.target.value)}
         value={notes}
-      ></textarea>
-      <label htmlFor="notes">notes</label> <br />
-      <input type="submit" value="Submit Info" />
-      
-          Course:
+        ></textarea>
+        <br />
+
+        Course:
       <select onChange={(e) => updateTable(e.target.value)} >
             <option value="apps">Appetizer</option>
             <option value="mains">Entree</option>
             <option value="drinks">Drink</option>
             <option value="alcoholDrinks">Alcohol</option>
           </select>
+         <br />  <br />
+      <input type="submit" value="Submit Info" />
+      
+          
        
       </form>
       </div>
