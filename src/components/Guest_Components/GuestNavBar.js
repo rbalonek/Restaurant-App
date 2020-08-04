@@ -13,6 +13,9 @@ export default function GuestNavBar() {
         <Link to="/BillPage">
           <button>Bill Page</button>
         </Link>
+
+      
+
       </header>
     </div>
   );

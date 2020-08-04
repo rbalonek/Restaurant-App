@@ -58,8 +58,6 @@ function CreateMenuItem(props) {
       <textarea
         name="notes"
         id="notes"
-        cols="30"
-        rows="5"
         onChange={(e) => updateNotes(e.target.value)}
         value={notes}
       ></textarea>

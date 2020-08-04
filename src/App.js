@@ -12,12 +12,12 @@ import DeleteButton from "./components/DeleteButton";
 import CreateMenuItem from "./components/CreateMenuItem";
 
 // "Backend" for restaurant
-import EditorMain from "./editor-menu/EditorMain"
+import EditorMain from "./editor-menu/EditorMain";
 
 // "Guest Experience"
-import WelcomePage from "./WelcomePage"
-import LiveMenu from "./live_menu/LiveMenu"
-import BillPage from "./components/Guest_Components/BillPage"
+import WelcomePage from "./WelcomePage";
+import LiveMenu from "./live_menu/LiveMenu";
+import BillPage from "./components/Guest_Components/BillPage";
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
@@ -141,17 +141,23 @@ function App() {
       </Route>
 
       <Route path="/EditorMain">
-      <EditorMain />
+        <EditorMain />
       </Route>
 
       <Route path="/LiveMenu">
-      <LiveMenu />
+        <LiveMenu
+          fetchEntries={fetchEntries}
+          invokeFetch={invokeFetch}
+          apps={apps}
+          mains={mains}
+          drinks={drinks}
+          alcoholDrinks={alcoholDrinks}
+        />
       </Route>
 
       <Route path="/BillPage">
-      <BillPage />
+        <BillPage />
       </Route>
-      
     </div>
   );
 }
