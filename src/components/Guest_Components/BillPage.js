@@ -1,13 +1,10 @@
-import React from 'react'
-import GuestNavBar from './GuestNavBar'
+import React from "react";
+
 
 export default function BillPage() {
   return (
     <div>
-      <header>
-      <GuestNavBar />
-      </header>
       <h1>Bill</h1>
     </div>
-  )
+  );
 }

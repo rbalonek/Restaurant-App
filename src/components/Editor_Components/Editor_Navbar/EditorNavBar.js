@@ -6,9 +6,7 @@ export default function EditorNavBar() {
     <div>
         <div className="header-links">
           
-          <Link to="/">
-            <button className="homepage-button">Home Page</button>
-          </Link>
+      
 
           <Link to="/MainMenuEditor">
             <button className="form-button">Edit Menu </button>

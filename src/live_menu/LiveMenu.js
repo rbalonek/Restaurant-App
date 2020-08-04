@@ -11,9 +11,7 @@ import GuestDrinkItem from "./Guest_Components/GuestDrinkItem"
 export default function LiveMenu(props) {
   return (
     <div>
-     <header>
-        <GuestNavBar />
-      </header>
+     
   
 
       <h1 className="menu-titles">Apps</h1>
