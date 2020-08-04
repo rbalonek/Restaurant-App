@@ -14,18 +14,18 @@ export default function LiveMenu(props) {
     <div>
      <Nav />
   
-    <section className="section" id="section-1">
-      <h1 className="menu-titles">Apps</h1>
+    <section className="section" id="section-1"> 
+        <h1 className="menu-titles">Apps</h1>
       {props.apps.map((app) => <GuestMenuItem key={app.id} item={app} type="app" />)}
       </section>
-
+      
       <section className="section" id="section-2">
-      <h1 className="menu-titles">Mains</h1>
+        <h1 className="menu-titles">Mains</h1>
       {props.mains.map((main) => <GuestMenuItem key={main.id} item={main} type="main" />)}
       </section>
 
       <section className="section" id="section-3">
-      <h1 className="menu-titles">Drinks</h1>
+        <h1 className="menu-titles">Drinks</h1>
       {props.drinks.map((drink) => <GuestDrinkItem key={drink.id} item={drink} type="drink" />)}
       </section>
 

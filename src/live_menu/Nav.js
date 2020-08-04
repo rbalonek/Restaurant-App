@@ -3,6 +3,8 @@ import Scrollspy from './lib/scrollspy'
 import "../App.css"
 
 const Nav = () => (
+
+
   <nav className="nav">
     <div className="nav__item nav__item--inverse">
       
@@ -15,22 +17,23 @@ const Nav = () => (
         fontWeight: 300
       }}
       offset={ -50 }
-      // onUpdate={
-      //   (el) => {
-      //     console.log(el)
-      //   }
-      // }
+      onUpdate={
+        (el) => {
+          console.log(el.id)
+
+        }
+      }
     >
-      <li className="nav__item"><a href="#section-1" className="nav__link">Apps</a></li>
-      <li className="nav__item"><a href="#section-2" className="nav__link">Main Course</a></li>
-      <li className="nav__item"><a href="#section-3" className="nav__link">Drinks</a></li>
-      <li className="nav__item"><a href="#section-4" className="nav__link">Wine / Cocktails</a></li>
+    
+    <button className="nav__item"><a href="#section-1" className="nav__link">Apps</a></button>
+    <button className="nav__item"><a href="#section-2" className="nav__link">Main Course</a></button>
+    <button className="nav__item"><a href="#section-3" className="nav__link">Drinks</a></button>
+    <button className="nav__item"><a href="#section-4" className="nav__link">Wine / Cocktails</a></button>
+      
     </Scrollspy>
   </nav>
 )
 
 export default Nav
 
-// <section className="section" id="section-1"></section>
-// <section className="section" id="section-2"></section>
-// <section className="section" id="section-3"></section>
+
