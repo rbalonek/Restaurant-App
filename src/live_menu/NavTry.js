@@ -2,9 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 import "./NavTry.css";
 
 import { Route } from "react-router-dom";
-import LiveMenu from "./LiveMenu"
+import LiveMenu from "./LiveMenu";
 
-const getDimensions = ele => {
+const getDimensions = (ele) => {
   const { height } = ele.getBoundingClientRect();
   const offsetTop = ele.offsetTop;
   const offsetBottom = offsetTop + height;
@@ -16,7 +16,7 @@ const getDimensions = ele => {
   };
 };
 
-const scrollTo = ele => {
+const scrollTo = (ele) => {
   ele.scrollIntoView({
     behavior: "smooth",
     block: "start",
@@ -27,14 +27,14 @@ function App() {
   const [visibleSection, setVisibleSection] = useState();
 
   const headerRef = useRef(null);
-  const leadershipRef = useRef(null);
-  const providerRef = useRef(null);
-  const operationsRef = useRef(null);
+  const appRef = useRef(null);
+  const MainsRef = useRef(null);
+  const drinksRef = useRef(null);
 
   const sectionRefs = [
-    { section: "Leadership", ref: leadershipRef },
-    { section: "Providers", ref: providerRef },
-    { section: "Operations", ref: operationsRef },
+    { section: "apps", ref: appRef },
+    { section: "mains", ref: MainsRef },
+    { section: "drinks", ref: drinksRef },
   ];
 
   useEffect(() => {
@@ -65,57 +65,55 @@ function App() {
   }, [visibleSection]);
   return (
     <div className="App">
-     
-
       <div className="content">
         <div className="sticky">
           <div className="header" ref={headerRef}>
             <button
               type="button"
-              className={`header_link ${visibleSection === "Leadership" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "apps" ? "selected" : ""
+              }`}
               onClick={() => {
-                scrollTo(leadershipRef.current);
+                scrollTo(appRef.current);
               }}
             >
-              Leadership
+              apps
             </button>
             <button
               type="button"
-              className={`header_link ${visibleSection === "Providers" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "mains" ? "selected" : ""
+              }`}
               onClick={() => {
-                scrollTo(providerRef.current);
+                scrollTo(MainsRef.current);
               }}
             >
-              Providers
+              mains
             </button>
             <button
               type="button"
-              className={`header_link ${visibleSection === "Operations" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "drinks" ? "selected" : ""
+              }`}
               onClick={() => {
-                scrollTo(operationsRef.current);
+                scrollTo(drinksRef.current);
               }}
             >
-              Operations
+              drinks
             </button>
           </div>
         </div>
-        
       </div>
 
       <Route>
-      <LiveMenu
-      leadershipRef={leadershipRef}
-      providerRef={providerRef}
-      operationsRef={operationsRef}
-        
-      />
-    </Route>
+        <LiveMenu appRef={appRef} MainsRef={MainsRef} drinksRef={drinksRef} />
+      </Route>
     </div>
   );
 }
 
 export default App;
 
-// <div className="section" id="Leadership" ref={leadershipRef} />
-//         <div className="section" id="Providers" ref={providerRef} />
-//         <div className="section" id="Operations" ref={operationsRef} />
+// <div className="section" id="apps" ref={appRef} />
+//         <div className="section" id="mains" ref={MainsRef} />
+//         <div className="section" id="drinks" ref={drinksRef} />
