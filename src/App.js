@@ -93,7 +93,10 @@ function App() {
 
   return (
     <div>
-    <WelcomePage />
+      <WelcomePage />
+      
+    
+
       <Route path="/MainMenuEditor">
         <MainMenu
           apps={apps}

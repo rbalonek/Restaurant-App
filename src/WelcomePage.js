@@ -6,22 +6,25 @@ export default function WelcomePage() {
   return (
     <div>
       <header>
-      <Link to="/LiveMenu">
-        <button className="guest-pages-button">Guest Pages</button>
-        </Link>
-        
-        <Link to="/">
-          <button className="homepage-button">Home Page</button>
+        <h1>Restaurant App</h1>
+<div className="nav-buttons">
+        <Link to="/LiveMenu">
+        <button className="guest-pages-button">Menu</button>
         </Link>
 
-        <Link to="/BillPage">
-          <button className="bill-page-button">Bill Page</button>
-        </Link>
+
+      <Link to="/BillPage">
+      <button className="bill-page-button">Bill Page</button>
+    </Link>
 
       <Link to="/EditorMain">
-        <button className="admin-button">Admin Pages</button>
-        </Link>
+        <button className="admin-button">Admin</button>
+          </Link>
+          </div>
       </header>
+
+
+      
       
     </div>
   )
