@@ -33,6 +33,11 @@ export default function MenuItem(props) {
   const classes = useStyles();
   const { item, type } = props;
 
+
+  function ActionLink() {
+    window.location.assign(`/CreateBillItem/${item.fields.price}/${item.fields.name}`)
+  }
+
   return (
     <div className={classes.items}>
       <Card className={classes.root}>
@@ -52,11 +57,13 @@ export default function MenuItem(props) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Add to Order
+        <Button onClick={ActionLink} size="small" color="primary">
+         Add to Order
           </Button>
         </CardActions>
       </Card>
     </div>
   );
 }
+
+//<Link to={`/EditMenu/${type}/${item.id}`}>

@@ -165,7 +165,7 @@ function App() {
         <CreateMenuItem fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
       </Route>
 
-      <Route path="/CreateBillItem">
+      <Route path="/CreateBillItem/:type/:id">
         <CreateBillItem fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
       </Route>
 

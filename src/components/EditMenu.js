@@ -20,8 +20,8 @@ export default function EditMenu(props) {
 
   const { id, type } = useParams();
   useEffect(() => {
-    const items = type === "app" ? props.apps : props.mains
-    const menuItem = items.find(item => item.id === id)
+    
+    const menuItem = type.find(item => item.id === id)
     updateName(menuItem.fields.name)
     updateNotes(menuItem.fields.notes)
     updatePrice(menuItem.fields.price)

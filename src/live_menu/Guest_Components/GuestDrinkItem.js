@@ -33,6 +33,9 @@ export default function GuestDrinkItem(props) {
   const classes = useStyles();
   const { item, type } = props;
 
+  function ActionLink() {
+    window.location.assign(`/CreateBillItem/${item.fields.price}/${item.fields.name}`)
+  }
   
   return (
     <div className={classes.items}>
@@ -53,7 +56,7 @@ export default function GuestDrinkItem(props) {
       </CardContent>
     </CardActionArea>
     <CardActions>
-      <Button size="small" color="primary">
+          <Button onClick={ActionLink} size="small" color="primary">
         Add to Order
       </Button>
     </CardActions>
