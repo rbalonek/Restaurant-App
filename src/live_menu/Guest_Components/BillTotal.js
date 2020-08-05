@@ -7,10 +7,10 @@ export default function BillTotal(props) {
 
   const parseFloated = parseFloat(item.fields.price)
 
-  console.log(parseFloated)
+  // console.log(parseFloated)
 
 
-  
+
   
   return (
     <div>

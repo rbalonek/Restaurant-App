@@ -20,6 +20,7 @@ import EditorMain from "./editor-menu/EditorMain";
 import WelcomePage from "./WelcomePage";
 import LiveMenu from "./live_menu/LiveMenu";
 import BillPage from "./components/Guest_Components/BillPage";
+import DeleteAllButton from "./live_menu/Guest_Components/DeleteAllButton"
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
@@ -152,6 +153,17 @@ function App() {
 
       <Route path="/DeleteButton">
         <DeleteButton
+          apps={apps}
+          mains={mains}
+          drinks={drinks}
+          alcoholDrinks={alcoholDrinks}
+          fetchEntries={fetchEntries}
+          invokeFetch={invokeFetch}
+        />
+      </Route>
+
+      <Route path="/DeleteAllButton">
+        <DeleteAllButton
           apps={apps}
           mains={mains}
           drinks={drinks}

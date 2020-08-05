@@ -1,6 +1,6 @@
 import React from "react";
 import BillItems from "../../live_menu/Guest_Components/BillItems"
-import BillTotal from "../../live_menu/Guest_Components/BillTotal"
+import DeleteAllButton from "../../live_menu/Guest_Components/DeleteAllButton"
 
 
 export default function BillPage(props) {
@@ -13,6 +13,7 @@ export default function BillPage(props) {
       {props.customerBill.map((app) => <BillItems key={app.id} item={app} type="app" />)}
       <h1>Total</h1>
       <p>{total}</p>
+      <DeleteAllButton />
     </div>
   );
 }

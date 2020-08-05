@@ -3,8 +3,8 @@ import axios from "axios";
 
 
 export default function DeleteButton(props) {
-  console.log(props.id)
-  console.log(props.type)
+  // console.log(props.id)
+  // console.log(props.type)
   // let 'drink' === 'drinks';
   const deletePost = async () => {
     const data = await axios.delete(
@@ -16,6 +16,7 @@ export default function DeleteButton(props) {
       }
     );
     // props.invokeFetch(!props.fetchEntries)
+    ActionLink()
   };
   function ActionLink() {
     window.location.assign("/MainMenuEditor");
@@ -23,9 +24,10 @@ export default function DeleteButton(props) {
 
   return (
     <div>
-      <button onClick={deletePost} onMouseUp={ActionLink} >
+      <button onClick={deletePost}> 
         delete
       </button>
     </div>
   );
 }
+//onMouseUp={ActionLink} 
