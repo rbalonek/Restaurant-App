@@ -17,7 +17,7 @@ export default function WelcomePage() {
       <button className="bill-page-button">Bill Page</button>
     </Link>
 
-      <Link to="/EditorMain">
+      <Link to="/PasswordValidator">
         <button className="admin-button">Admin</button>
           </Link>
           </div>

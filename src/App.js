@@ -12,6 +12,7 @@ import DeleteButton from "./components/DeleteButton";
 import CreateMenuItem from "./components/CreateMenuItem";
 
 // "Backend" for restaurant
+import PasswordValidator from "./components/Editor_Components/PasswordValidator/PasswordValidator"
 import EditorMain from "./editor-menu/EditorMain";
 
 // "Guest Experience"
@@ -95,7 +96,9 @@ function App() {
     <div>
       <WelcomePage />
       
-    
+      <Route path="/PasswordValidator">
+        <PasswordValidator />
+      </Route>
 
       <Route path="/MainMenuEditor">
         <MainMenu
