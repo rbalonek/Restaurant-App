@@ -30,10 +30,13 @@ function CreateBillItem(props) {
     
     updatePrice('');
     
- 
+    ActionLink()
   };
  
-  
+
+  function ActionLink() {
+    window.location.assign("/LiveMenu")
+  }
 
   return (
     <div> 
