@@ -10,6 +10,7 @@ import EditMenu from "./components/EditMenu";
 import EditDrinks from "./components/EditDrinks";
 import DeleteButton from "./components/DeleteButton";
 import CreateMenuItem from "./components/CreateMenuItem";
+import CreateBillItem from "./live_menu/Guest_Components/CreateBillItem"
 
 // "Backend" for restaurant
 import PasswordValidator from "./components/Editor_Components/PasswordValidator/PasswordValidator"
@@ -162,6 +163,10 @@ function App() {
 
       <Route path="/CreateMenuItem">
         <CreateMenuItem fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
+      </Route>
+
+      <Route path="/CreateBillItem">
+        <CreateBillItem fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
       </Route>
 
       <Route path="/EditorMain">
