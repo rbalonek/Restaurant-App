@@ -46,7 +46,7 @@ export default function EditMenu(props) {
     ActionLink()
   }
   function ActionLink() {
-    window.location.assign("/MainMenu")
+    window.location.assign("/MainMenuEditor")
   }
 
   return (

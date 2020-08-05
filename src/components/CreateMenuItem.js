@@ -11,6 +11,8 @@ function CreateMenuItem(props) {
   const [table, updateTable] = useState('');
   const [imglink, updateImglink] = useState('');
 
+  const [confirmation, updateConfirmation] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const data =
@@ -37,7 +39,11 @@ function CreateMenuItem(props) {
     updatePrice('');
     updateTable('');
     updateImglink('');
+    updateConfirmation('Added to menu!') //// Why doesn't this do the thing?
+    // confirm()
   };
+ 
+  // let confirm = () => { confirmation }
 
   return (
     <div> <EditorHeader />
@@ -89,6 +95,7 @@ function CreateMenuItem(props) {
           
        
       </form>
+        <h3>{confirmation}</h3>
       </div>
   );
 }

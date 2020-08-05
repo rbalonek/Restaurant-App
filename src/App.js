@@ -5,7 +5,7 @@ import "./App.css";
 
 //Components
 
-import MainMenu from "./components/MainMenuEditor";
+import MainMenuEditor from "./components/MainMenuEditor";
 import EditMenu from "./components/EditMenu";
 import EditDrinks from "./components/EditDrinks";
 import DeleteButton from "./components/DeleteButton";
@@ -26,6 +26,24 @@ function App() {
   const [mains, updateMains] = useState([]);
   const [drinks, updateDrinks] = useState([]);
   const [alcoholDrinks, updateAlcoholDrinks] = useState([]);
+  const [customerBill, updateCustomerBill] = useState([]);
+
+
+  useEffect(() => {
+    const apiCall = async () => {
+      const data = await axios.get(
+        "https://api.airtable.com/v0/app9S6k06MQoTSJbG/customerBill?view=Grid%20view",
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          },
+        }
+      );
+      updateCustomerBill(data.data.records);
+      // console.log(data.data.records)
+    };
+    apiCall();
+  }, [fetchEntries]);
 
   useEffect(() => {
     const apiCall = async () => {
@@ -101,7 +119,7 @@ function App() {
       </Route>
 
       <Route path="/MainMenuEditor">
-        <MainMenu
+        <MainMenuEditor
           apps={apps}
           mains={mains}
           drinks={drinks}
@@ -162,7 +180,13 @@ function App() {
       </Route>
 
       <Route path="/BillPage">
-        <BillPage />
+        <BillPage
+          apps={apps}
+          mains={mains}
+          drinks={drinks}
+          alcoholDrinks={alcoholDrinks}
+          customerBill={customerBill}
+        />
       </Route>
     </div>
   );

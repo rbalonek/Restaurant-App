@@ -46,7 +46,6 @@ function PasswordValidator() {
       <input
         type="Submit"
         value="Submit"
-        // onClick = {() => }
       />
         <h3>{confirmation}</h3>
       </form>

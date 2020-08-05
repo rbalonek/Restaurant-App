@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./WelcomePage.css"
 import { Link } from 'react-router-dom'
 
 export default function WelcomePage() {
+  // const [username, updateUsername] = useState('')
+  // //Random # Cabana # let result = Math.floor(Math.random() * (10) + animeMin)
+  // useEffect(() => {
+  //   //alert("ah!")//
+  //   var username = prompt(`Welcome to Cabana #${result}! Please enter your name`)
+  //   return updateUsername
+  // }, []);
+
+
   return (
     <div>
       <header>
