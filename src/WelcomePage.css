@@ -1,6 +1,7 @@
 header{
   z-index:999;
   background-repeat: no-repeat;
+  margin-left: 25px;
   /* align-items: center; */
   /* position: sticky; */
   /* display: flex;
