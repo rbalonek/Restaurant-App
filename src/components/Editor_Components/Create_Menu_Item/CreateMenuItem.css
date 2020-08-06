@@ -1,18 +1,21 @@
-.menu-icon-editor{
+.menu-icon-editor {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-p{
+p {
+  text-align: center;
+}
+h2{
   text-align: center;
 }
 
-.edit-menu-button{
-
+.edit-menu-button {
 }
 
-.create-menu-item-button{
+.create-menu-item-button {
   position: absolute;
   right: 0px;
 }
+

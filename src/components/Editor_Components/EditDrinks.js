@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import "./Create_Menu_Item/CreateMenuItem.css"
 
 ///Components
 import DeleteButton from './DeleteButton'
+
+///Icons
 
 
 
@@ -52,7 +55,13 @@ function ActionLink() {
 
   return (
     <div>
-     
+    <Link to="/MainMenuEditor">
+    <button className="edit-menu-button">Edit Menu</button>
+     </Link>
+     <Link to="/CreateMenuItem">
+     <button className="create-menu-item-button">Create Menu Item</button>
+      </Link>
+      
       <form onSubmit={handleSubmit}>
         <h2>Edit Menu</h2>
         <h1>

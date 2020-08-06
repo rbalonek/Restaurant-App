@@ -3,11 +3,27 @@ import axios from "axios";
 import "./CreateMenuItem.css"
 
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
-
-///Components
 import {Link } from "react-router-dom"
 
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+      backgroundColor: 'white',
+      marginTop: 50,
+      
+    }, 
+    
+  },
+}));
+
 function CreateMenuItem(props) {
+  const classes = useStyles();
   const [name, updateName] = useState('');
   const [notes, updateNotes] = useState('');
   const [price, updatePrice] = useState('');
@@ -55,61 +71,65 @@ function CreateMenuItem(props) {
         </Link>
       
     <Link to="/MainMenuEditor">
-    <button>Edit Menu</button>
+        <button>Edit Menu</button>
      </Link>
      <Link to="/CreateMenuItem">
      <button className="create-menu-item-button">Create Menu Item</button>
       </Link>
-      
-    <form onSubmit={handleSubmit}>
-      <h2>Add New Menu Item</h2>
-      <label htmlFor="name">name</label>
-      <input
-        type="Text"
-        id="name"
-        onChange={(e) => updateName(e.target.value)}
-        value={name}
-      /> <br/> <br/>
 
-      <label htmlFor="price">price</label>
-      <input
-        type="Text"
-        id="price"
-        onChange={(e) => updatePrice(e.target.value)}
-        value={price}
-        /> <br/> <br/>
 
-        <label htmlFor="imglink">Image Link</label>
-        <input
-        type="Text"
+      <form
+        className={classes.root}
+        noValidate autoComplete="off"
+        onSubmit={handleSubmit}
+      >
+        <TextField
+          id="name"
+          label="Item Name"
+          onChange={(e) => updateName(e.target.value)}
+          value={name}
+        />
+        
+        <TextField
+          id="price"
+          label="Price"
+          onChange={(e) => updatePrice(e.target.value)}
+          value={price}
+        />
+
+
+        <TextField
         id="imglink"
         onChange={(e) => updateImglink(e.target.value)}
         value={imglink}
-      /> <br/> <br/>
+          label="Image Link"
+          variant="outlined" />
+        
+        <TextField
+          id="notes"
+          onChange={(e) => updateNotes(e.target.value)}
+          value={notes}
+          label="Description"
+          multiline
+          rows={4}
+          defaultValue="Default Value"
+        />
 
-      <label htmlFor="notes">notes</label> <br />
-      <textarea
-        name="notes"
-        id="notes"
-        onChange={(e) => updateNotes(e.target.value)}
-        value={notes}
-        ></textarea>
-        <br />
-
-        Course:
-      <select onChange={(e) => updateTable(e.target.value)} >
-            <option value="apps">Choose Course</option>
-            <option value="apps">Appetizer</option>
-            <option value="mains">Entree</option>
-            <option value="drinks">Drink</option>
-            <option value="alcoholDrinks">Alcohol</option>
-          </select>
-         <br />  <br />
-      <input type="submit" value="Submit Info" />
-      
-          
        
-      </form>
+        <select
+          onChange={(e) => updateTable(e.target.value)} >
+              <option value="apps">Choose Course</option>
+              <option value="apps">Appetizer</option>
+              <option value="mains">Entree</option>
+              <option value="drinks">Drink</option>
+              <option value="alcoholDrinks">Alcohol</option>
+            </select>
+           <br />  <br />
+        <input type="submit" value="Submit Info" />
+    </form>
+      
+      
+      
         <h3>{confirmation}</h3>
       </div>
   );
