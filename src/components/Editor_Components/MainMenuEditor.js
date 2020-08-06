@@ -4,10 +4,26 @@ import DrinkItem from "./DrinkItem"
 import { Link } from "react-router-dom"
 import "./Create_Menu_Item/CreateMenuItem.css"
 
+
+///For Button
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+
+
+///Icons
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1),
+    right: 0,
+  },
+}));
 
 
 export default function MainMenuEditor(props) {
+  const classes = useStyles();
   return (
     
     <div>
@@ -15,12 +31,14 @@ export default function MainMenuEditor(props) {
     <HomeRoundedIcon />
   </Link>
       
-    <Link to="/MainMenuEditor">
-    <button className="edit-menu-button">Edit Menu</button>
-     </Link>
+      
      <Link to="/CreateMenuItem">
-     <button className="create-menu-item-button">Create Menu Item</button>
+     <Fab size="small" color="secondary" aria-label="add" className={classes.margin}>
+     <AddIcon />
+   </Fab>
      </Link>
+     
+     
       
       <h1>Main Menu Edit</h1>
       
