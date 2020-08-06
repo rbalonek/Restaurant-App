@@ -7,6 +7,17 @@ body{
   align-items: center;
   color: red;
 }
+.bill-page{
+position: fixed;
+
+right: 5px;
+}
+
+.menu-icon{
+  position: fixed;
+  left: 5px;
+
+}
 
 .sticky {
   position: sticky;

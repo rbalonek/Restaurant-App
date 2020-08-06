@@ -1,5 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom"
 import "./LiveMenu.css";
+
+import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
 /// Menu Components
 import GuestMenuItem from "./Guest_Components/GuestMenuItem";
@@ -121,7 +125,14 @@ export default function LiveMenu(props) {
               </button>
             </div>
           </div>
-      
+
+          <Link to="/BillPage" className="bill-page">
+          <ShoppingCartRoundedIcon />
+        </Link>
+
+        <Link to="/LiveMenu" className="menu-icon">
+          <HomeRoundedIcon />
+        </Link>
 
           <div className="section" id="apps" ref={appRef}>
             

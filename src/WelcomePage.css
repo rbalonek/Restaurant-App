@@ -22,19 +22,16 @@ header{
   top: 0px;
   right: 0px;
 }
-.bill-page{
-/* position: relative;
-top: 110px;
-left: 150px; */
+/* .bill-page{
 position: absolute;
 top: 110px;
 right: 0px;
-}
-.menu-icon{
+} */
+/* .menu-icon{
   position: absolute;
   left: 0px;
   top: 110px;
-}
+} */
 a, a:visited, a:hover, a:active {
   color: inherit;
 }
