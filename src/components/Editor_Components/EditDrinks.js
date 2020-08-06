@@ -6,11 +6,42 @@ import "./Create_Menu_Item/CreateMenuItem.css"
 ///Components
 import DeleteButton from './DeleteButton'
 
-///Icons
+/// For Card
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 250,
+
+    
+    // marginLeft: 50,
+    marginBottom: 50,
+  },
+  media: {
+    height: 100,
+    minWidth: 200,
+    // maxHeight: 100,
+    // borderRadius: 80,
+  },
+  items: {
+    display: 'block',
+    textAlign: 'center',
+    justifyContent: 'center',
+    // alignItems: 'center',
+  },
+});
 
 
 
 export default function EditDrinks(props) {
+  const classes = useStyles();
   // console.log(props.apps)
   const [name, updateName] = useState('');
   const [notes, updateNotes] = useState('');
@@ -61,17 +92,30 @@ function ActionLink() {
      <Link to="/CreateMenuItem">
      <button className="create-menu-item-button">Create Menu Item</button>
       </Link>
-      
+
+
+<div className={classes.items}>
+<Card className={classes.root}>
+  <CardActionArea>
+    <CardMedia
+      className={classes.media}
+      image={imglink}
+      title={name}
+    />
+    <CardContent>
+      <Typography gutterBottom variant="h5" component="h2">
+        {name}
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="p">
+        {price}, {notes}
+      </Typography>
+    </CardContent>
+  </CardActionArea>
+</Card>
+</div>
+      <div className={classes.items}>
       <form onSubmit={handleSubmit}>
-        <h2>Edit Menu</h2>
-        <h1>
-          {name}
-          <br />
-          {notes}
-          <br />
-          {price}
-          <br />
-        </h1>
+        
         <label htmlFor="name">Name</label>
         <input
           type="Text"
@@ -101,7 +145,8 @@ function ActionLink() {
           id={id}
           type={type+'s'}
         />
-      </form>
+        </form>
+        </div>
     </div>
   );
 }

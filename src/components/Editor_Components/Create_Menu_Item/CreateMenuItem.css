@@ -11,11 +11,14 @@ h2{
   text-align: center;
 }
 
-.edit-menu-button {
-}
-
 .create-menu-item-button {
   position: absolute;
   right: 0px;
 }
 
+form{
+  text-align: -webkit-center;
+}
+div{
+  text-align: -webkit-center;
+}
