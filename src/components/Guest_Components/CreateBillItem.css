@@ -1,3 +1,16 @@
 .to-hide{
   display: none;
 }
+
+.bill-page{
+  position: fixed;
+  right: 5px;
+  top:100px;
+  }
+  
+  .menu-icon{
+    position: fixed;
+    left: 5px;
+    top:100px;
+  
+  }

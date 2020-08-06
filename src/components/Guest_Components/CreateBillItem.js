@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./CreateBillItem.css"
+
+//Icons
+import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
 
 
@@ -48,6 +52,14 @@ function CreateBillItem(props) {
 
   return (
     <div> 
+    <Link to="/BillPage" className="bill-page">
+    <ShoppingCartRoundedIcon />
+    </Link>
+
+  <Link to="/LiveMenu" className="menu-icon">
+    <HomeRoundedIcon />
+    </Link>
+    
     <h1>{id} ${type}</h1>
       <form
         className="create-bill-form"
