@@ -1,7 +1,8 @@
 import React from "react";
 import BillItems from "../../live_menu/Guest_Components/BillItems"
 import DeleteAllButton from "../../live_menu/Guest_Components/DeleteAllButton"
-
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+import { Link } from 'react-router-dom'
 
 export default function BillPage(props) {
 
@@ -9,6 +10,10 @@ export default function BillPage(props) {
   const total = props.customerBill.reduce((sum,curr) => sum+parseFloat(curr.fields.price),0)
   return (
     <div>
+    <Link to="/LiveMenu">
+      <HomeRoundedIcon />
+      </Link>
+
       <h1>Bill</h1>
       {props.customerBill.map((app) => <BillItems key={app.id} item={app} type="app" />)}
       <h1>Total</h1>

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 //components
 import DeleteButton from "./DeleteButton"
-import EditorHeader from "./EditorHeader"
+// import EditorHeader from "./EditorHeader"
 
 
 export default function EditMenu(props) {
@@ -48,7 +48,7 @@ export default function EditMenu(props) {
   return (
     
     <div>
-     <EditorHeader />
+     
       <form onSubmit={handleSubmit}>
         <h2>Edit Menu</h2>
         <h1>{name}<br />{notes}<br />{price}<br /></h1>

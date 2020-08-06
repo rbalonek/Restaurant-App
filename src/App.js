@@ -14,7 +14,7 @@ import CreateBillItem from "./live_menu/Guest_Components/CreateBillItem"
 
 // "Backend" for restaurant
 import PasswordValidator from "./components/Editor_Components/PasswordValidator/PasswordValidator"
-import EditorMain from "./editor-menu/EditorMain";
+// import EditorMain from "./editor-menu/EditorMain";
 
 // "Guest Experience"
 import WelcomePage from "./WelcomePage";
@@ -181,9 +181,7 @@ function App() {
         <CreateBillItem fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
       </Route>
 
-      <Route path="/EditorMain">
-        <EditorMain />
-      </Route>
+    
 
       <Route path="/LiveMenu">
         <LiveMenu
