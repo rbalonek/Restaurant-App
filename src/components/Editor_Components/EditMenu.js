@@ -15,6 +15,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
+/// Buttons
+import PlusButton from "./PlusButton"
+import EditButton from "./EditButton"
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
@@ -30,7 +34,7 @@ const useStyles = makeStyles({
     // borderRadius: 80,
   },
   items: {
-    marginTop: 50,
+    marginTop: 70,
   },
 });
 
@@ -80,11 +84,11 @@ export default function EditMenu(props) {
     
     <div>
       
-    <Link to="/MainMenuEditor">
-    <button className="edit-menu-button">Edit Menu</button>
+    <Link to="/MainMenuEditor" className="edit-button">
+    <EditButton />
      </Link>
-     <Link to="/CreateMenuItem">
-     <button className="create-menu-item-button">Create Menu Item</button>
+     <Link to="/CreateMenuItem" className="plus-button">
+     <PlusButton />
       </Link>
       
 

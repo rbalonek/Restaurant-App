@@ -21,6 +21,16 @@ h2{
   left: 0px;
   top: 140px;
 }
+.edit-button{
+  position: absolute;
+  right: 0px;
+  top: 140px;
+}
+.plus-button{
+  position: absolute;
+  left: 0px;
+  top: 140px;
+}
 
 form{
   text-align: -webkit-center;

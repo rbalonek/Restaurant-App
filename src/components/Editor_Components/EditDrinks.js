@@ -5,6 +5,8 @@ import "./Create_Menu_Item/CreateMenuItem.css"
 
 ///Components
 import DeleteButton from './DeleteButton'
+import EditButton from "./EditButton"
+import PlusButton from "./PlusButton"
 
 /// For Card
 import { makeStyles } from "@material-ui/core/styles";
@@ -31,7 +33,7 @@ const useStyles = makeStyles({
     // borderRadius: 80,
   },
   items: {
-    marginTop: 50,
+    marginTop: 70,
   },
 });
 
@@ -83,11 +85,11 @@ function ActionLink() {
 
   return (
     <div>
-    <Link to="/MainMenuEditor">
-    <button className="edit-menu-button">Edit Menu</button>
+    <Link to="/MainMenuEditor" className="edit-button">
+    <EditButton />
      </Link>
-     <Link to="/CreateMenuItem">
-     <button className="create-menu-item-button">Create Menu Item</button>
+     <Link to="/CreateMenuItem" className="plus-button">
+     <PlusButton />
       </Link>
 
 
