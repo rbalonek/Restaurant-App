@@ -1,6 +1,6 @@
 import React from "react";
-import BillItems from "../../live_menu/Guest_Components/BillItems"
-import DeleteAllButton from "../../live_menu/Guest_Components/DeleteAllButton"
+import BillItems from "./BillItems"
+import DeleteAllButton from "../Editor_Components/DeleteAllButton"
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import { Link } from 'react-router-dom'
 

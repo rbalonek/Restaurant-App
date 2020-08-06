@@ -10,7 +10,7 @@ import EditMenu from "./components/Editor_Components/EditMenu";
 import EditDrinks from "./components/Editor_Components/EditDrinks";
 import DeleteButton from "./components/Editor_Components/DeleteButton";
 import CreateMenuItem from "./components/Editor_Components/Create_Menu_Item/CreateMenuItem";
-import CreateBillItem from "./live_menu/Guest_Components/CreateBillItem"
+import CreateBillItem from "./components/Guest_Components/CreateBillItem"
 
 // "Backend" for restaurant
 import PasswordValidator from "./components/Editor_Components/PasswordValidator/PasswordValidator"
@@ -20,7 +20,7 @@ import PasswordValidator from "./components/Editor_Components/PasswordValidator/
 import WelcomePage from "./WelcomePage";
 import LiveMenu from "./live_menu/LiveMenu";
 import BillPage from "./components/Guest_Components/BillPage";
-import DeleteAllButton from "./live_menu/Guest_Components/DeleteAllButton"
+import DeleteAllButton from "./components/Editor_Components/DeleteAllButton"
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);

@@ -6,8 +6,8 @@ import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
 /// Menu Components
-import GuestMenuItem from "./Guest_Components/GuestMenuItem";
-import GuestDrinkItem from "./Guest_Components/GuestDrinkItem";
+import GuestMenuItem from "../components/Guest_Components/GuestMenuItem";
+import GuestDrinkItem from "../components/Guest_Components/GuestDrinkItem";
 
 
 const getDimensions = (ele) => {
