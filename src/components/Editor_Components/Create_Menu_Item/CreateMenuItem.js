@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Editor_Components/Create_Menu_Item/CreateMenuItem.css"
+import "./CreateMenuItem.css"
 
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 

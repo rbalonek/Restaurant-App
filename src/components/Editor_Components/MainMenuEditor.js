@@ -2,7 +2,7 @@ import React from 'react'
 import MenuItem from "./MenuItem"
 import DrinkItem from "./DrinkItem"
 import { Link } from "react-router-dom"
-import "./Editor_Components/Create_Menu_Item/CreateMenuItem.css"
+import "./Create_Menu_Item/CreateMenuItem.css"
 
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 

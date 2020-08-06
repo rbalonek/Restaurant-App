@@ -47,7 +47,7 @@ export default function EditDrinks(props) {
   };
 
 function ActionLink() {
-  window.location.assign("/MainMenu")
+  window.location.assign("/MainMenuEditor")
 }
 
   return (

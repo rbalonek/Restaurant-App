@@ -5,11 +5,11 @@ import "./App.css";
 
 //Components
 
-import MainMenuEditor from "./components/MainMenuEditor";
-import EditMenu from "./components/EditMenu";
-import EditDrinks from "./components/EditDrinks";
-import DeleteButton from "./components/DeleteButton";
-import CreateMenuItem from "./components/CreateMenuItem";
+import MainMenuEditor from "./components/Editor_Components/MainMenuEditor";
+import EditMenu from "./components/Editor_Components/EditMenu";
+import EditDrinks from "./components/Editor_Components/EditDrinks";
+import DeleteButton from "./components/Editor_Components/DeleteButton";
+import CreateMenuItem from "./components/Editor_Components/Create_Menu_Item/CreateMenuItem";
 import CreateBillItem from "./live_menu/Guest_Components/CreateBillItem"
 
 // "Backend" for restaurant
