@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Redirect } from "react-router-dom"
 import './PasswordValidator.css';
+import { Link } from "react-router-dom"
+
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
 
 const confirm = (e, password, confirmPassword, updateConfirmation) => {e.preventDefault()
@@ -15,11 +18,18 @@ function PasswordValidator() {
   const [confirmation, updateConfirmation] = useState("")
  
   if (confirmation === "Valid!"){
-    return <Redirect to="/EditorMain"/>
+    return <Redirect to="/MainMenuEditor"/>
   }
 
 
   return (
+    <div>
+    
+
+        <Link to="/LiveMenu" className="menu-icon">
+          <HomeRoundedIcon />
+        </Link>
+    
     <div className="form">
       <h1>Login</h1>
       <form onSubmit= {(e) => confirm(e, password, confirmPassword, updateConfirmation)} >
@@ -54,7 +64,7 @@ function PasswordValidator() {
       
           </div>
       
-        
+          </div>
     
   );
 }

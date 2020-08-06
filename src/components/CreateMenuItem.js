@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Editor_Components/Create_Menu_Item/CreateMenuItem.css"
+
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
 ///Components
 import {Link } from "react-router-dom"
@@ -47,6 +50,9 @@ function CreateMenuItem(props) {
 
   return (
     <div> 
+      <Link to="/LiveMenu" className="menu-icon-editor">
+          <HomeRoundedIcon />
+        </Link>
       
     <Link to="/MainMenuEditor">
     <button>Edit Menu</button>
