@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./WelcomePage.css";
 import { Link } from "react-router-dom";
-import LockOpenRoundedIcon from '@material-ui/icons/LockOpenRounded';
+import LockOpenRoundedIcon from "@material-ui/icons/LockOpenRounded";
+import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
 export default function WelcomePage() {
   // const [username, updateUsername] = useState('')
@@ -16,16 +18,16 @@ export default function WelcomePage() {
     <div>
       <header>
         <div className="nav-buttons">
-          <Link to="/LiveMenu">
-            <button className="guest-pages-button">Menu</button>
+          <Link to="/BillPage" className="bill-page">
+            <ShoppingCartRoundedIcon />
           </Link>
 
-          <Link to="/BillPage" className="bill-page">
-            <button className="bill-page-button">Bill Page</button>
+          <Link to="/LiveMenu" className="menu-icon">
+            <HomeRoundedIcon />
           </Link>
 
           <Link to="/PasswordValidator" className="lock-icon">
-          <LockOpenRoundedIcon />
+            <LockOpenRoundedIcon />
           </Link>
         </div>
       </header>
