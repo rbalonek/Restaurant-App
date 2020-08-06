@@ -7,7 +7,10 @@ import {Link } from "react-router-dom"
 
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
+// import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,11 +74,11 @@ function CreateMenuItem(props) {
         </Link>
       
     <Link to="/MainMenuEditor">
-        <button>Edit Menu</button>
+    <Fab color="secondary" aria-label="edit">
+    <EditIcon />
+  </Fab>
      </Link>
-     <Link to="/CreateMenuItem">
-     <button className="create-menu-item-button">Create Menu Item</button>
-      </Link>
+    
 
 
       <form
