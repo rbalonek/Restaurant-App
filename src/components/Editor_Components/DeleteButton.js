@@ -1,8 +1,18 @@
 import React from "react";
 import axios from "axios";
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import DeleteIcon from '@material-ui/icons/Delete';
 
+
+const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
 
 export default function DeleteButton(props) {
+  const classes = useStyles();
   // console.log(props.id)
   // console.log(props.type)
   // let 'drink' === 'drinks';
@@ -24,9 +34,16 @@ export default function DeleteButton(props) {
 
   return (
     <div>
-      <button onClick={deletePost}> 
-        delete
-      </button>
+      <Button
+      onClick={deletePost}
+    variant="contained"
+    color="secondary"
+    className={classes.button}
+    startIcon={<DeleteIcon />}
+  >
+        Delete
+  </Button>
+
     </div>
   );
 }

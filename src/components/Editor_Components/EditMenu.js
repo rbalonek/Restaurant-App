@@ -9,15 +9,16 @@ import DeleteButton from "./DeleteButton"
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
+
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+
 import Typography from "@material-ui/core/Typography";
 
 /// Buttons
 import PlusButton from "./PlusButton"
 import EditButton from "./EditButton"
+import SaveButton from "./SaveButton"
 
 const useStyles = makeStyles({
   root: {
@@ -128,40 +129,17 @@ export default function EditMenu(props) {
         <label htmlFor="imglink">Image Link</label>
         <input type="Text" id="imglink" onChange={e => updateImglink(e.target.value)} value={imglink} />
         
-        <input type="submit" value="Update Item" />
-        <DeleteButton
-          id={id}
-          type={type+'s'}
-        />
-
+        <input type="submit" />
+        
+        
+                <br /> <br />
+<DeleteButton
+id={id}
+type={type+'s'}
+/>
           
       </form>
 
     </div>
   );
 }
-
-
-// <div className={classes.items}>
-// <Card className={classes.root}>
-//   <CardActionArea>
-//     <CardMedia
-//       className={classes.media}
-//       image={item.fields.imglink}
-//       title={item.fields.name}
-//     />
-//     <CardContent>
-//       <Typography gutterBottom variant="h5" component="h2">
-//         {item.fields.name}
-//       </Typography>
-//       <Typography variant="body2" color="textSecondary" component="p">
-//         {item.fields.price}, {item.fields.notes}
-//       </Typography>
-//     </CardContent>
-//   </CardActionArea>
-// </Card>
-// </div>
-
-// <h2>Edit Menu</h2>
-// <img src={imglink} width="200" height="200" alt={imglink}  />
-// <h1>{name}<br />{notes}<br />{price}<br /></h1>

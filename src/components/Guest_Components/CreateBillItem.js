@@ -7,7 +7,8 @@ import "./CreateBillItem.css"
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
-
+///Button
+import SaveButton from "../Editor_Components/SaveButton"
 
 function CreateBillItem(props) {
 // console.log(props)
@@ -83,8 +84,8 @@ function CreateBillItem(props) {
         // onChange={(e) => updatePrice(e.target.value)}
         value={price}
         /> <br/> <br/>
-
         <input type="submit" value="Confirm" />
+        
       </form>
      
       </div>
@@ -94,7 +95,7 @@ function CreateBillItem(props) {
 export default CreateBillItem;
 
 
-
+//<input type="submit" value="Confirm" />
 
 
 // function CreateBillItem(props) {

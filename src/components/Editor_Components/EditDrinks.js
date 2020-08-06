@@ -139,7 +139,9 @@ function ActionLink() {
 
         <input type="Text" id="imglink" onChange={e => updateImglink(e.target.value)} value={imglink} />
 
-        <input type="submit" />
+          <input type="submit" />
+          
+          <br /> <br />
         <DeleteButton
           id={id}
           type={type+'s'}
