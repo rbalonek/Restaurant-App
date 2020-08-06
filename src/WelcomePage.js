@@ -3,8 +3,8 @@ import "./WelcomePage.css";
 import { Link } from "react-router-dom";
 import LockOpenRoundedIcon from "@material-ui/icons/LockOpenRounded";
 // import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
-import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
-import LiveMenu from "./live_menu/LiveMenu"
+// import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+// import LiveMenu from "./live_menu/LiveMenu"
 export default function WelcomePage() {
   // const [username, updateUsername] = useState('')
   // //Random # Cabana # let result = Math.floor(Math.random() * (10) + animeMin)
