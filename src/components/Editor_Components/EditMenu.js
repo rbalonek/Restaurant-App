@@ -30,9 +30,7 @@ const useStyles = makeStyles({
     // borderRadius: 80,
   },
   items: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: 50,
   },
 });
 

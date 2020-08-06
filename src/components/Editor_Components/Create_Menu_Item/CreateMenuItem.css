@@ -14,6 +14,12 @@ h2{
 .create-menu-item-button {
   position: absolute;
   right: 0px;
+  top: 140px;
+}
+.edit-menu-button{
+  position: absolute;
+  left: 0px;
+  top: 140px;
 }
 
 form{
