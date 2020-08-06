@@ -98,6 +98,7 @@ function CreateMenuItem(props) {
 
         Course:
       <select onChange={(e) => updateTable(e.target.value)} >
+            <option value="apps">Choose Course</option>
             <option value="apps">Appetizer</option>
             <option value="mains">Entree</option>
             <option value="drinks">Drink</option>
