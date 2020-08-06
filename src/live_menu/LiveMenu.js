@@ -5,6 +5,7 @@ import "./LiveMenu.css";
 import GuestMenuItem from "./Guest_Components/GuestMenuItem";
 import GuestDrinkItem from "./Guest_Components/GuestDrinkItem";
 
+
 const getDimensions = (ele) => {
   const { height } = ele.getBoundingClientRect();
   const offsetTop = ele.offsetTop;
@@ -120,9 +121,11 @@ export default function LiveMenu(props) {
               </button>
             </div>
           </div>
+      
 
           <div className="section" id="apps" ref={appRef}>
-            <h1 className="menu-titles">Apps</h1>
+            
+            <h1 className="menu-titles">Apps </h1>
             {props.apps.map((app) => (
               <GuestMenuItem key={app.id} item={app} type="app" />
             ))}
@@ -136,12 +139,14 @@ export default function LiveMenu(props) {
           </div>
 
           <div className="section" id="drinks" ref={drinksRef}>
+        
             <h1 className="menu-titles">Drinks</h1>
             {props.drinks.map((drink) => (
               <GuestDrinkItem key={drink.id} item={drink} type="drink" />
             ))}
           </div>
           <div className="section" id="alcoholDrinks" ref={alcoholDrinksRef}>
+          
           <h1 className="menu-titles">Wine / Cocktails</h1>
           {props.alcoholDrinks.map((alcoholDrink) => (
             <GuestDrinkItem
@@ -153,6 +158,7 @@ export default function LiveMenu(props) {
           </div>
         </div>
       </div>
+
     </div>
   );
 }

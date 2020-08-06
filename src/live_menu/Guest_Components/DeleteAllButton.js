@@ -5,7 +5,8 @@ export default function DeleteAllButton(props) {
 
   const deletePost = async () => {
     await axios.delete(
-      'https://api.airtable.com/v0/app9S6k06MQoTSJbG/customerBill?filterByFormula=price!=""',
+      // "https://api.airtable.com/v0/app9S6k06MQoTSJbG/customerBill?filterByFormula=NOT(%7Bprice%7D%3D0)",
+      "https://api.airtable.com/v0/app9S6k06MQoTSJbG/customerBill?filterByFormula=price!=0",
       // `https://api.airtable.com/v0/app9S6k06MQoTSJbG/${props.type}/${props.id}`,
       {
         headers: {

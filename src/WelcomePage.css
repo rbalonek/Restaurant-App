@@ -4,14 +4,22 @@ header{
   display: flex;
   flex-direction: column;
   top: 0;
-  background-color:red;
-  
+  height: 150px;
+  max-width: 100%;
+  border: none;
+  /* mask-position: 75%; */
+  background-image: url("https://static1.squarespace.com/static/51f32317e4b0db872bc40dc7/t/5dcc045d37b5697e37486221/1596575120211/");
+  /* background-color:red; */
+  /* object-fit: cover;
+  object-position: 0% 10px; */
   /* height: 100px;
   background-color: red;
   position: sticky;
   top: 0;
   z-index: 0; */
+  background-size: cover;
 }
+
 h1{
   text-align: center;
 }
