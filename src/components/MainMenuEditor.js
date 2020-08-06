@@ -1,7 +1,7 @@
 import React from 'react'
 import MenuItem from "./MenuItem"
 import DrinkItem from "./DrinkItem"
-import EditorHeader from "./EditorHeader"
+import { Link } from "react-router-dom"
 
 
 
@@ -9,7 +9,13 @@ export default function MainMenuEditor(props) {
   return (
     
     <div>
-      <header> <EditorHeader /> </header>
+      
+    <Link to="/MainMenuEditor">
+    <button>Edit Menu</button>
+     </Link>
+     <Link to="/CreateMenuItem">
+     <button>Create Menu Item</button>
+     </Link>
       
       <h1>Main Menu Edit</h1>
       

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 ///Components
-import EditorHeader from "./EditorHeader"
+import {Link } from "react-router-dom"
 
 function CreateMenuItem(props) {
   const [name, updateName] = useState('');
@@ -46,7 +46,15 @@ function CreateMenuItem(props) {
   // let confirm = () => { confirmation }
 
   return (
-    <div> <EditorHeader />
+    <div> 
+      
+    <Link to="/MainMenuEditor">
+    <button>Edit Menu</button>
+     </Link>
+     <Link to="/CreateMenuItem">
+     <button>Create Menu Item</button>
+      </Link>
+      
     <form onSubmit={handleSubmit}>
       <h2>Add New Menu Item</h2>
       <label htmlFor="name">name</label>
