@@ -58,7 +58,7 @@ function CreateMenuItem(props) {
     <button>Edit Menu</button>
      </Link>
      <Link to="/CreateMenuItem">
-     <button>Create Menu Item</button>
+     <button className="create-menu-item-button">Create Menu Item</button>
       </Link>
       
     <form onSubmit={handleSubmit}>

@@ -16,10 +16,10 @@ export default function MainMenuEditor(props) {
   </Link>
       
     <Link to="/MainMenuEditor">
-    <button>Edit Menu</button>
+    <button className="edit-menu-button">Edit Menu</button>
      </Link>
      <Link to="/CreateMenuItem">
-     <button>Create Menu Item</button>
+     <button className="create-menu-item-button">Create Menu Item</button>
      </Link>
       
       <h1>Main Menu Edit</h1>

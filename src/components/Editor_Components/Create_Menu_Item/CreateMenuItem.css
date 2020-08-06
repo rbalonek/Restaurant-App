@@ -3,3 +3,16 @@
   left: 0px;
   top: 0px;
 }
+
+p{
+  text-align: center;
+}
+
+.edit-menu-button{
+
+}
+
+.create-menu-item-button{
+  position: absolute;
+  right: 0px;
+}
