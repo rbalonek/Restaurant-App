@@ -11,6 +11,7 @@ export default function DrinkItem(props) {
         {item.fields.notes}
         <br></br>
         {item.fields.price}
+        <br></br>
       </p>
     </Link>
   );

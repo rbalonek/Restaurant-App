@@ -99,7 +99,7 @@ export default function EditDrinks(props) {
         </Card>
       </div>
       <div className={classes.items}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="edit-menu-form">
           <label htmlFor="name">Name</label>
           <input
             type="Text"

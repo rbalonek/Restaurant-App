@@ -6,6 +6,7 @@
 
 p {
   text-align: center;
+  
 }
 h2 {
   text-align: center;
@@ -38,4 +39,7 @@ form {
 div {
   text-align: -webkit-center;
   
+}
+.edit-menu-form{
+  margin-bottom: 100px;
 }

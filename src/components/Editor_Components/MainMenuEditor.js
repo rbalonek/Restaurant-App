@@ -63,6 +63,7 @@ export default function MainMenuEditor(props) {
           type="alcoholDrink"
         />
       ))}
+      <br /> <br /> <br />
     </div>
   );
 }

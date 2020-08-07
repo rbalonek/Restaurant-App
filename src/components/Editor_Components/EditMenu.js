@@ -101,7 +101,7 @@ export default function EditMenu(props) {
         </Card>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="edit-menu-form">
         <label htmlFor="name">Name</label>
         <input
           type="Text"
