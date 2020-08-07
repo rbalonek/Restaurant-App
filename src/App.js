@@ -11,6 +11,7 @@ import EditDrinks from "./components/Editor_Components/EditDrinks";
 import DeleteButton from "./components/Editor_Components/DeleteButton";
 import CreateMenuItem from "./components/Editor_Components/Create_Menu_Item/CreateMenuItem";
 import CreateBillItem from "./components/Guest_Components/CreateBillItem";
+import Footer from "./components/Footer/Footer"
 
 // "Backend" for restaurant
 import PasswordValidator from "./components/Editor_Components/PasswordValidator/PasswordValidator";
@@ -194,6 +195,9 @@ function App() {
           customerBill={customerBill}
         />
       </Route>
+      <footer>
+      <Footer />
+      </footer>
     </div>
   );
 }
