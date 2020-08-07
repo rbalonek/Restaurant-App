@@ -18,6 +18,7 @@ import Typography from "@material-ui/core/Typography";
 /// Buttons
 import PlusButton from "./PlusButton";
 import EditButton from "./EditButton";
+import SaveButton from "./SaveButton"
 
 const useStyles = makeStyles({
   root: {
@@ -132,7 +133,7 @@ export default function EditMenu(props) {
           onChange={(e) => updateImglink(e.target.value)}
           value={imglink}
         />
-        <input type="submit" />
+        <SaveButton />
         <br /> <br />
         <DeleteButton id={id} type={type + "s"} />
       </form>

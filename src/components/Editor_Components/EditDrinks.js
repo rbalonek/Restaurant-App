@@ -7,6 +7,7 @@ import "./Create_Menu_Item/CreateMenuItem.css";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
 import PlusButton from "./PlusButton";
+import SaveButton from "./SaveButton"
 
 /// For Card
 import { makeStyles } from "@material-ui/core/styles";
@@ -129,7 +130,7 @@ export default function EditDrinks(props) {
             onChange={(e) => updateImglink(e.target.value)}
             value={imglink}
           />
-          <input type="submit" />
+          <SaveButton />
           <br /> <br />
           <DeleteButton id={id} type={type + "s"} />
         </form>
