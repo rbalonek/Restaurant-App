@@ -13,13 +13,12 @@ body {
 }
 .bill-page {
   position: fixed;
-
-  right: 5px;
+  right: 15px;
 }
 
 .menu-icon {
   position: fixed;
-  left: 5px;
+  left: 15px;
 }
 
 .sticky {
@@ -52,7 +51,7 @@ body {
   color: red;
 }
 
-.makeStyles-items-3{
+.makeStyles-items-3 {
   display: inline-block;
-    margin-left: 20px;
+  margin-left: 20px;
 }
