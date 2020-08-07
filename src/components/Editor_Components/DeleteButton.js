@@ -25,6 +25,7 @@ export default function DeleteButton(props) {
   };
   function ActionLink() {
     window.location.assign("/MainMenuEditor");
+    alert( 'Deleted!')
   }
 
   return (

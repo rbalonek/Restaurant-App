@@ -55,7 +55,13 @@ function CreateMenuItem(props) {
     updatePrice("");
     updateTable("");
     updateImglink("");
+    ActionLink()
   };
+
+  function ActionLink() {
+    window.location.assign("/MainMenuEditor");
+    alert(`${name} added to ${table}`)
+  }
 
   return (
     <div>

@@ -34,6 +34,7 @@ function CreateBillItem(props) {
   };
   function ActionLink() {
     window.location.assign("/LiveMenu");
+    alert(`${name} added to your bill!`)
   }
 
   return (
