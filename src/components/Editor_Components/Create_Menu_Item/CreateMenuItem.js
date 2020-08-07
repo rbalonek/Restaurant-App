@@ -29,11 +29,9 @@ function CreateMenuItem(props) {
   const [table, updateTable] = useState("");
   const [imglink, updateImglink] = useState("");
 
-  const [confirmation, updateConfirmation] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const data =
     await axios.post(
       `https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}`,
       {
@@ -94,7 +92,6 @@ function CreateMenuItem(props) {
           onChange={(e) => updateImglink(e.target.value)}
           value={imglink}
           label="Image Link"
-          variant="outlined"
         />
         <TextField
           id="notes"

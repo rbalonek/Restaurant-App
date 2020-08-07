@@ -10,7 +10,7 @@ const BASE_URL = "https://api.airtable.com/v0/app9S6k06MQoTSJbG/customerBill/";
 export default function BillPage(props) {
   ///Soleil Solomon to the rescue!
 
-  const yeetAirtable = () => {
+  const KillTheBill = () => {
     // get our bills
     const billEntries = props.customerBill;
     const post = setInterval(async () => {
@@ -21,7 +21,7 @@ export default function BillPage(props) {
       // this guy stops the interval in case there are no more entries
       if (!bill) {
         clearInterval(post);
-        return;
+        return ActionLink();
       }
       const { id } = bill;
       // make an axios request to the delete endpoint for entry with id ${id}
@@ -35,6 +35,11 @@ export default function BillPage(props) {
       // console.log(`Above entry just deleted. ${remaining} entries left!`);
     }, 250);
   };
+
+  function ActionLink() {
+    window.location.assign("/BillPage");
+    alert('Thanks for paying the bill!')
+  }
 
   const total = props.customerBill.reduce(
     (sum, curr) => sum + parseFloat(curr.fields.price),
@@ -52,7 +57,7 @@ export default function BillPage(props) {
       ))}
       <h1>Total</h1>
       <p>{total}</p>
-      <DeleteAllButton deletePost={yeetAirtable} />
+      <DeleteAllButton deletePost={KillTheBill} />
     </div>
   );
-}
+  };

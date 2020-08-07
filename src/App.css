@@ -1,7 +1,7 @@
 /* .hide-after-start.LiveMenu{
   display: none;
 } */
-header {
+/* header {
   z-index: 999;
   background-repeat: no-repeat;
   margin-left: 25px;
@@ -23,4 +23,5 @@ a:active {
 }
 h1 {
   text-align: center;
-}
+} */
+

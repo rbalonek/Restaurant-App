@@ -4,7 +4,8 @@
 header {
   z-index: 999;
   background-repeat: no-repeat;
-  margin-left: 25px;
+  background-position-x: center;
+  /* margin-left: 25px; */
   top: 0;
   height: 150px;
   border: none;
@@ -26,4 +27,46 @@ h1 {
 }
 .nav-buttons {
   align-self: center;
+}
+
+
+
+@media screen and (max-width:365){
+  header {
+    z-index: 999;
+    background-repeat: no-repeat;
+    margin-left: 100px;
+    top: 0;
+    height: 150px;
+    border: none;
+    background-image: url("https://res.cloudinary.com/bobalobbadingdong/image/upload/v1596678633/LuxHeader_mcyhkg.png");
+  }
+
+}
+
+@media screen and (max-width:320){
+  header {
+    z-index: 999;
+    background-repeat: no-repeat;
+    margin-left: 25px;
+    top: 0;
+    height: 150px;
+    border: none;
+    background-image: url("https://res.cloudinary.com/bobalobbadingdong/image/upload/v1596678633/LuxHeader_mcyhkg.png");
+  }
+  .lock-icon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+  }
+  h1 {
+    text-align: center;
+  }
+
 }
