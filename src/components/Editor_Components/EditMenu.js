@@ -18,21 +18,16 @@ import Typography from "@material-ui/core/Typography";
 /// Buttons
 import PlusButton from "./PlusButton"
 import EditButton from "./EditButton"
-import SaveButton from "./SaveButton"
+
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
-
-    
-    // marginLeft: 50,
     marginBottom: 50,
   },
   media: {
     height: 100,
     minWidth: 200,
-    // maxHeight: 100,
-    // borderRadius: 80,
   },
   items: {
     marginTop: 70,
@@ -43,7 +38,6 @@ const useStyles = makeStyles({
 
 export default function EditMenu(props) {
   const classes = useStyles();
-  // console.log(props.apps)
   const [name, updateName] = useState('');
   const [notes, updateNotes] = useState('');
   const [price, updatePrice] = useState('');
@@ -62,7 +56,7 @@ export default function EditMenu(props) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const table = type === "app" ? "apps" : "mains"
-    const data = await axios.put(`https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}/${id}`, {
+      await axios.put(`https://api.airtable.com/v0/app9S6k06MQoTSJbG/${table}/${id}`, {
       fields: {
         name: name,
         notes: notes,

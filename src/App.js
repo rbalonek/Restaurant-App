@@ -10,17 +10,16 @@ import EditMenu from "./components/Editor_Components/EditMenu";
 import EditDrinks from "./components/Editor_Components/EditDrinks";
 import DeleteButton from "./components/Editor_Components/DeleteButton";
 import CreateMenuItem from "./components/Editor_Components/Create_Menu_Item/CreateMenuItem";
-import CreateBillItem from "./components/Guest_Components/CreateBillItem"
+import CreateBillItem from "./components/Guest_Components/CreateBillItem";
 
 // "Backend" for restaurant
-import PasswordValidator from "./components/Editor_Components/PasswordValidator/PasswordValidator"
-
+import PasswordValidator from "./components/Editor_Components/PasswordValidator/PasswordValidator";
 
 // "Guest Experience"
 import WelcomePage from "./WelcomePage";
 import LiveMenu from "./live_menu/LiveMenu";
 import BillPage from "./components/Guest_Components/BillPage";
-import DeleteAllButton from "./components/Editor_Components/DeleteAllButton"
+import DeleteAllButton from "./components/Editor_Components/DeleteAllButton";
 
 function App() {
   const [fetchEntries, invokeFetch] = useState(true);
@@ -29,7 +28,6 @@ function App() {
   const [drinks, updateDrinks] = useState([]);
   const [alcoholDrinks, updateAlcoholDrinks] = useState([]);
   const [customerBill, updateCustomerBill] = useState([]);
-
 
   useEffect(() => {
     const apiCall = async () => {
@@ -42,7 +40,6 @@ function App() {
         }
       );
       updateCustomerBill(data.data.records);
-      // console.log(data.data.records)
     };
     apiCall();
   }, [fetchEntries]);
@@ -58,7 +55,6 @@ function App() {
         }
       );
       updateMains(data.data.records);
-      // console.log(data.data.records);
     };
     apiCall();
     invokeFetch(false);
@@ -75,7 +71,6 @@ function App() {
         }
       );
       updateApps(data.data.records);
-      // console.log(data.data.records)
     };
     apiCall();
   }, [fetchEntries]);
@@ -91,7 +86,6 @@ function App() {
         }
       );
       updateDrinks(data.data.records);
-      // console.log(data.data.records)
     };
     apiCall();
   }, [fetchEntries]);
@@ -107,7 +101,6 @@ function App() {
         }
       );
       updateAlcoholDrinks(data.data.records);
-      // console.log(data.data.records);
     };
     apiCall();
   }, [fetchEntries]);
@@ -115,7 +108,7 @@ function App() {
   return (
     <div>
       <WelcomePage />
-      
+
       <Route path="/PasswordValidator">
         <PasswordValidator />
       </Route>
@@ -180,8 +173,6 @@ function App() {
       <Route path="/CreateBillItem/:type/:id">
         <CreateBillItem fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
       </Route>
-
-    
 
       <Route path="/LiveMenu">
         <LiveMenu

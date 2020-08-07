@@ -11,56 +11,53 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
-
-    
-    // marginLeft: 50,
     marginBottom: 50,
   },
   media: {
     height: 100,
     minWidth: 200,
-    // maxHeight: 100,
-    // borderRadius: 80,
   },
   items: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
 export default function GuestDrinkItem(props) {
   const classes = useStyles();
-  const { item, type } = props;
+  const { item } = props;
 
   function ActionLink() {
-    window.location.assign(`/CreateBillItem/${item.fields.price}/${item.fields.name}`)
+    window.location.assign(
+      `/CreateBillItem/${item.fields.price}/${item.fields.name}`
+    );
   }
-  
+
   return (
     <div className={classes.items}>
-    <Card className={classes.root}>
-    <CardActionArea>
-      <CardMedia
-        className={classes.media}
-        image= {item.fields.imglink}
-        title={item.fields.name}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-        {item.fields.name}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-        {item.fields.price}, {item.fields.notes}
-        </Typography>
-      </CardContent>
-    </CardActionArea>
-    <CardActions>
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={item.fields.imglink}
+            title={item.fields.name}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {item.fields.name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {item.fields.price}, {item.fields.notes}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
           <Button onClick={ActionLink} size="small" color="primary">
-        Add to Order
-      </Button>
-    </CardActions>
+            Add to Order
+          </Button>
+        </CardActions>
       </Card>
-      </div>
+    </div>
   );
 }

@@ -11,16 +11,11 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
-
-    
-    // marginLeft: 50,
     marginBottom: 50,
   },
   media: {
     height: 100,
     minWidth: 200,
-    // maxHeight: 100,
-    // borderRadius: 80,
   },
   items: {
     display: 'flex',
@@ -31,7 +26,7 @@ const useStyles = makeStyles({
 
 export default function MenuItem(props) {
   const classes = useStyles();
-  const { item, type } = props;
+  const { item } = props;
 
 
   function ActionLink() {
@@ -65,5 +60,3 @@ export default function MenuItem(props) {
     </div>
   );
 }
-
-//<Link to={`/EditMenu/${type}/${item.id}`}>
