@@ -52,6 +52,7 @@ export default function EditMenu(props) {
     updateNotes(menuItem.fields.notes)
     updatePrice(menuItem.fields.price)
     updateImglink(menuItem.fields.imglink)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[] ) 
   const handleSubmit = async (e) => {
     e.preventDefault()

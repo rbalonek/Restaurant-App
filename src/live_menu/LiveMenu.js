@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import "./LiveMenu.css";
 
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
@@ -8,7 +8,6 @@ import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 /// Menu Components
 import GuestMenuItem from "../components/Guest_Components/GuestMenuItem";
 import GuestDrinkItem from "../components/Guest_Components/GuestDrinkItem";
-
 
 const getDimensions = (ele) => {
   const { height } = ele.getBoundingClientRect();
@@ -50,6 +49,7 @@ export default function LiveMenu(props) {
       const { height: headerHeight } = getDimensions(headerRef.current);
       const scrollPosition = window.scrollY + headerHeight;
 
+      // eslint-disable-next-line array-callback-return
       const selected = sectionRefs.find(({ section, ref }) => {
         const ele = ref.current;
         if (ele) {
@@ -59,6 +59,7 @@ export default function LiveMenu(props) {
       });
 
       if (selected && selected.section !== visibleSection) {
+        // @ts-ignore
         setVisibleSection(selected.section);
       } else if (!selected && visibleSection) {
         setVisibleSection(undefined);
@@ -70,6 +71,7 @@ export default function LiveMenu(props) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visibleSection]);
 
   return (
@@ -121,21 +123,20 @@ export default function LiveMenu(props) {
                   scrollTo(alcoholDrinksRef.current);
                 }}
               >
-              Wine / Cocktails
+                Wine / Cocktails
               </button>
             </div>
           </div>
 
           <Link to="/BillPage" className="bill-page">
-          <ShoppingCartRoundedIcon />
-        </Link>
+            <ShoppingCartRoundedIcon />
+          </Link>
 
-        <Link to="/LiveMenu" className="menu-icon">
-          <HomeRoundedIcon />
-        </Link>
+          <Link to="/LiveMenu" className="menu-icon">
+            <HomeRoundedIcon />
+          </Link>
 
           <div className="section" id="apps" ref={appRef}>
-            
             <h1 className="menu-titles">Apps </h1>
             {props.apps.map((app) => (
               <GuestMenuItem key={app.id} item={app} type="app" />
@@ -150,26 +151,23 @@ export default function LiveMenu(props) {
           </div>
 
           <div className="section" id="drinks" ref={drinksRef}>
-        
             <h1 className="menu-titles">Drinks</h1>
             {props.drinks.map((drink) => (
               <GuestDrinkItem key={drink.id} item={drink} type="drink" />
             ))}
           </div>
           <div className="section" id="alcoholDrinks" ref={alcoholDrinksRef}>
-          
-          <h1 className="menu-titles">Wine / Cocktails</h1>
-          {props.alcoholDrinks.map((alcoholDrink) => (
-            <GuestDrinkItem
-              key={alcoholDrink.id}
-              item={alcoholDrink}
-              type="alcoholDrink"
-            />
-          ))}
+            <h1 className="menu-titles">Wine / Cocktails</h1>
+            {props.alcoholDrinks.map((alcoholDrink) => (
+              <GuestDrinkItem
+                key={alcoholDrink.id}
+                item={alcoholDrink}
+                type="alcoholDrink"
+              />
+            ))}
           </div>
         </div>
       </div>
-
     </div>
   );
 }
