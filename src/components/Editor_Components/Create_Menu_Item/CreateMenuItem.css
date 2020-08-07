@@ -7,7 +7,7 @@
 p {
   text-align: center;
 }
-h2{
+h2 {
   text-align: center;
 }
 
@@ -16,25 +16,25 @@ h2{
   right: 0px;
   top: 140px;
 }
-.edit-menu-button{
+.edit-menu-button {
   position: absolute;
   left: 0px;
   top: 140px;
 }
-.edit-button{
+.edit-button {
   position: absolute;
   right: 0px;
   top: 140px;
 }
-.plus-button{
+.plus-button {
   position: absolute;
   left: 0px;
   top: 140px;
 }
 
-form{
+form {
   text-align: -webkit-center;
 }
-div{
+div {
   text-align: -webkit-center;
 }

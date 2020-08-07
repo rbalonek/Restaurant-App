@@ -45,7 +45,7 @@ export default function EditDrinks(props) {
     updateNotes(drinkItem.fields.notes);
     updatePrice(drinkItem.fields.price);
     updateImglink(drinkItem.fields.imglink);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -137,4 +137,3 @@ export default function EditDrinks(props) {
     </div>
   );
 }
- 

@@ -1,49 +1,26 @@
 /* .hide-after-start.LiveMenu{
   display: none;
 } */
-header{
-  z-index:999;
+header {
+  z-index: 999;
   background-repeat: no-repeat;
   margin-left: 25px;
-  /* align-items: center; */
-  /* position: sticky; */
-  /* display: flex;
-  flex-direction: column; */
   top: 0;
   height: 150px;
-  /* max-width: 100%; */
   border: none;
-  /* mask-position: 75%; */
   background-image: url("https://res.cloudinary.com/bobalobbadingdong/image/upload/v1596678633/LuxHeader_mcyhkg.png");
-  /* background-color:red; */
- 
 }
-.lock-icon{
-  /* position: relative;
-  left: 140px; */
+.lock-icon {
   position: absolute;
   top: 0px;
   right: 0px;
 }
-/* .bill-page{
-position: absolute;
-top: 110px;
-right: 0px;
-} */
-/* .menu-icon{
-  position: absolute;
-  left: 0px;
-  top: 110px;
-} */
-a, a:visited, a:hover, a:active {
+a,
+a:visited,
+a:hover,
+a:active {
   color: inherit;
 }
-h1{
+h1 {
   text-align: center;
 }
-/* .nav-buttons{
-  align-self: center;
-} */
-/* .guest-pages-button,.bill-page-button, .admin-button{
-  margin-left: 20px;
-} */
