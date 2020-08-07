@@ -1,3 +1,5 @@
+//// All restaurant images, descriptions, and logos approved for non-commercial use by Skylar Saltz, GM of Cafe Luxembourg August 2020. Please don't sue me...
+
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import axios from "axios";
@@ -11,7 +13,7 @@ import EditDrinks from "./components/Editor_Components/EditDrinks";
 import DeleteButton from "./components/Editor_Components/DeleteButton";
 import CreateMenuItem from "./components/Editor_Components/Create_Menu_Item/CreateMenuItem";
 import CreateBillItem from "./components/Guest_Components/CreateBillItem";
-import Footer from "./components/Footer/Footer"
+import Footer from "./components/Footer/Footer";
 
 // "Backend" for restaurant
 import PasswordValidator from "./components/Editor_Components/PasswordValidator/PasswordValidator";
@@ -196,7 +198,7 @@ function App() {
         />
       </Route>
       <footer>
-      <Footer />
+        <Footer />
       </footer>
     </div>
   );

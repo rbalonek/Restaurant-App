@@ -13,6 +13,11 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 
+///For description text field
+
+import TextField from "@material-ui/core/TextField";
+
+
 import Typography from "@material-ui/core/Typography";
 
 /// Buttons
@@ -31,6 +36,8 @@ const useStyles = makeStyles({
   },
   items: {
     marginTop: 70,
+  },textFields: {
+    backgroundColor: "white",
   },
 });
 
@@ -111,13 +118,16 @@ export default function EditMenu(props) {
           value={name}
         />
         <label htmlFor="notes">Notes</label>
-        <input
-          type="Text"
+        <br />
+        <TextField
+          className={classes.textFields}
           id="notes"
           onChange={(e) => updateNotes(e.target.value)}
           value={notes}
-        />{" "}
-        <br />
+          label="Description"
+          multiline
+          rows={5}
+        />
         <br />
         <label htmlFor="price">Price</label>
         <input

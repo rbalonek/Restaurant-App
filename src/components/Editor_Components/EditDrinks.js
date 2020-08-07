@@ -114,6 +114,7 @@ export default function EditDrinks(props) {
             id="notes"
             onChange={(e) => updateNotes(e.target.value)}
             value={notes}
+            
           />{" "}
           <br /> <br />
           <label htmlFor="price">Price</label>

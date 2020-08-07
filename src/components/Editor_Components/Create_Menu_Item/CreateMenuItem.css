@@ -11,6 +11,9 @@ p {
 h2 {
   text-align: center;
 }
+.editor-titles{
+  color: red;
+}
 
 .create-menu-item-button {
   position: absolute;
