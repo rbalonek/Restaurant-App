@@ -14,11 +14,13 @@ body {
 .bill-page {
   position: fixed;
   right: 15px;
+  z-index: 99;
 }
 
 .menu-icon {
   position: fixed;
   left: 15px;
+  z-index: 99;
 }
 
 .sticky {

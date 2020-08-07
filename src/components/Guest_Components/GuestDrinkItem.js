@@ -47,7 +47,7 @@ export default function GuestDrinkItem(props) {
               {item.fields.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              {item.fields.price}, {item.fields.notes}
+              ${item.fields.price}, {item.fields.notes}
             </Typography>
           </CardContent>
         </CardActionArea>
