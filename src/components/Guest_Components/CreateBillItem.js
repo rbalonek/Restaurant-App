@@ -7,6 +7,9 @@ import "./CreateBillItem.css";
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
+//Button
+import BlueButton from "./BlueButton"
+
 function CreateBillItem(props) {
   const { id, type } = useParams();
   const name = `${id}`;
@@ -68,10 +71,12 @@ function CreateBillItem(props) {
           value={price}
         />{" "}
         <br /> <br />
-        <input type="submit" value="Confirm" />
+        <BlueButton />
       </form>
     </div>
   );
 }
 
 export default CreateBillItem;
+//<BlueButton type="submit" />
+//<input type="submit" value="Confirm" />
