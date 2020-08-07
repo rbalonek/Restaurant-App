@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CreateMenuItem.css";
-
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import { Link } from "react-router-dom";
-
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Fab from "@material-ui/core/Fab";
 import EditIcon from "@material-ui/icons/Edit";
+import SaveButton from "../SaveButton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(1),
       width: "25ch",
-      backgroundColor: "white",
+      // backgroundColor: "white",
       marginTop: 50,
     },
+  },
+  textFields: {
+    backgroundColor: "white",
   },
 }));
 
@@ -28,7 +30,6 @@ function CreateMenuItem(props) {
   const [price, updatePrice] = useState("");
   const [table, updateTable] = useState("");
   const [imglink, updateImglink] = useState("");
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,12 +56,12 @@ function CreateMenuItem(props) {
     updatePrice("");
     updateTable("");
     updateImglink("");
-    ActionLink()
+    ActionLink();
   };
 
   function ActionLink() {
     window.location.assign("/MainMenuEditor");
-    alert(`${name} added to ${table}`)
+    alert(`${name} added to ${table}`);
   }
 
   return (
@@ -82,24 +83,28 @@ function CreateMenuItem(props) {
         onSubmit={handleSubmit}
       >
         <TextField
+          className={classes.textFields}
           id="name"
           label="Item Name"
           onChange={(e) => updateName(e.target.value)}
           value={name}
         />
         <TextField
+          className={classes.textFields}
           id="price"
           label="Price"
           onChange={(e) => updatePrice(e.target.value)}
           value={price}
         />
         <TextField
+          className={classes.textFields}
           id="imglink"
           onChange={(e) => updateImglink(e.target.value)}
           value={imglink}
           label="Image Link"
         />
         <TextField
+          className={classes.textFields}
           id="notes"
           onChange={(e) => updateNotes(e.target.value)}
           value={notes}
@@ -116,10 +121,12 @@ function CreateMenuItem(props) {
           <option value="alcoholDrinks">Alcohol</option>
         </select>
         <br /> <br />
-        <input type="submit" value="Submit Info" />
+        <SaveButton />
       </form>
     </div>
   );
 }
 
 export default CreateMenuItem;
+
+//<input type="submit" value="Submit Info" />

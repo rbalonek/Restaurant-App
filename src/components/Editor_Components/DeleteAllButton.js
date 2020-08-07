@@ -11,4 +11,3 @@ export default function DeleteAllButton(props) {
     </div>
   );
 }
-// <button onClick={deletePost}>Pay Bill</button>

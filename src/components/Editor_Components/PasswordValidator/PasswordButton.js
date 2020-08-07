@@ -1,28 +1,30 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
-import SaveIcon from "@material-ui/icons/Save";
+import Button from "@material-ui/core/Button";
+
 
 const useStyles = makeStyles((theme) => ({
-  button: {
+  margin: {
     margin: theme.spacing(1),
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
   },
 }));
 
-export default function SaveButton() {
+export default function PasswordButton() {
   const classes = useStyles();
 
   return (
     <div>
       <Button
         variant="contained"
+        size="medium"
         color="primary"
-        size="large"
-        className={classes.button}
-        startIcon={<SaveIcon />}
-        type="submit"
+        className={classes.margin}
+        value="Submit"
       >
-        Save
+        Medium
       </Button>
     </div>
   );

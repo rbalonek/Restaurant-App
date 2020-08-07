@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import "./PasswordValidator.css";
 import { Link } from "react-router-dom";
-
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+import PasswordButton from "./PasswordValidator";
 
 const confirm = (e, password, confirmPassword, updateConfirmation) => {
   e.preventDefault();
@@ -52,7 +52,7 @@ function PasswordValidator() {
               updateConfirmPassword(e.target.value);
             }}
           />
-          <input type="Submit" value="Submit" />
+          <PasswordButton />
           <h3>{confirmation}</h3>
         </form>
       </div>
@@ -61,3 +61,5 @@ function PasswordValidator() {
 }
 
 export default PasswordValidator;
+//PasswordButton
+//<input type="Submit" value="Submit" />
