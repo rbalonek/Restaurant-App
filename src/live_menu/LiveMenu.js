@@ -139,7 +139,7 @@ export default function LiveMenu(props) {
           <div className="section" id="apps" ref={appRef}>
             <h1 className="menu-titles">Apps </h1>
             {props.apps.map((app) => (
-              <GuestMenuItem key={app.id} item={app} type="app" />
+              <GuestMenuItem className="app-block" key={app.id} item={app} type="app" />
             ))}
           </div>
 

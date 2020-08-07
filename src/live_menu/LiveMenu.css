@@ -51,3 +51,8 @@ body {
   border-bottom: 3px solid rgb(0, 95, 173);
   color: red;
 }
+
+.makeStyles-items-3{
+  display: inline-block;
+    margin-left: 20px;
+}

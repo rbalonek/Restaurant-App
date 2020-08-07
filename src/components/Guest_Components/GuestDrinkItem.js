@@ -18,9 +18,8 @@ const useStyles = makeStyles({
     minWidth: 200,
   },
   items: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'inline-block',
+    marginLeft: 20,
   },
 });
 
