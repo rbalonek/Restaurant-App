@@ -4,10 +4,29 @@ import DeleteAllButton from "../Editor_Components/DeleteAllButton";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./CreateBillItem.css"
+
+//Paper 
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(1),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+      
+    },
+  },
+}));
 
 const BASE_URL = "https://api.airtable.com/v0/app9S6k06MQoTSJbG/customerBill/";
 
 export default function BillPage(props) {
+  const classes = useStyles();
   ///Soleil Solomon to the rescue!
 
   const KillTheBill = () => {
@@ -52,11 +71,13 @@ export default function BillPage(props) {
       </Link>
 
       <h1>Bill</h1>
+      
       {props.customerBill.map((app) => (
         <BillItems key={app.id} item={app} type="app" />
       ))}
       <h1>Total</h1>
-      <p>{total}</p>
+      <Paper elevation={3}>{total}</Paper>
+      
       <DeleteAllButton deletePost={KillTheBill} />
     </div>
   );
